@@ -74,7 +74,7 @@ header {
 }
 
 .logo-text h1 {
-  font-size: 36px;                /* INCREASED: Bold, professional header size */
+  font-size: 36px;                /* Bold, professional header size */
   font-weight: bold;
   margin: 0;
   color: #ff9933;
@@ -99,7 +99,7 @@ header {
   margin: 0 16px;                 /* Even distribution space on both sides of each link */
   text-decoration: none;
   font-weight: bold;
-  font-size: 16px;                /* INCREASED: Easier to read and tap */
+  font-size: 16px;                /* Easier to read and tap */
   transition: color 0.2s ease;
 }
 
@@ -129,13 +129,13 @@ section h2 {
   font-size: 32px;
 }
 
-.about-content, .contact-content {
+.about-content, .donate-content {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
 }
 
-.about-content p, .contact-content p {
+.about-content p {
   margin-bottom: 15px;
   font-size: 16px;
 }
@@ -225,6 +225,77 @@ section h2 {
 .program-card.welfare .card-icon i, .program-card.welfare h3, .program-card.welfare ul li::before { color: #138808; } /* Saffron Green */
 .program-card.welfare:hover { background-color: #f4fbf3; }
 
+/* ========================================================
+   CONTACT US SECTION - REARRANGED HORIZONTAL GRID 
+   ======================================================== */
+#contact {
+  padding: 60px 20px;
+  background-color: #fafafa; /* Separate from previous white sections */
+  border-top: 1px solid #eeeeee;
+  width: 100%;
+}
+
+.contact-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important; /* 3 clean horizontal side-by-side columns */
+  gap: 30px !important;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.contact-card {
+  background: #ffffff !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 12px !important;
+  padding: 30px 20px !important;
+  text-align: center !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
+  border-color: #ff9933 !important; /* Saffron highlight on card hover */
+}
+
+.contact-icon {
+  font-size: 30px !important;
+  color: #ff9933 !important;
+  background-color: #fff4e6 !important;
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 15px !important;
+}
+
+.contact-card h3 {
+  font-size: 18px !important;
+  font-weight: bold !important;
+  color: #333333 !important;
+  margin-bottom: 10px !important;
+}
+
+.contact-card p,
+.contact-card a {
+  font-size: 14px !important;
+  color: #555555 !important;
+  text-decoration: none !important;
+  line-height: 1.5 !important;
+}
+
+.contact-card a:hover {
+  color: #ff9933 !important;
+  text-decoration: underline !important;
+}
+
 /* Footer */
 footer {
   background: #138808;
@@ -253,13 +324,13 @@ footer {
   .logo-group .tagline,
   .logo .tagline {
     text-align: center;
-    white-space: normal !important; /* Safely breaks into rows if device viewport screens drop below asset thresholds */
+    white-space: normal !important;
   }
   .logo-text {
     align-items: center !important;
     text-align: center !important;
     padding-left: 0 !important;
-    padding-right: 0 !important;   /* Removes the desktop counter-balance centering track properties on mobile viewports */
+    padding-right: 0 !important;
   }
   .logo-text nav {
     justify-content: center !important;
@@ -270,10 +341,22 @@ footer {
   #programs {
     grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
   }
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .contact-card:nth-child(3) {
+    grid-column: span 2 !important;
+  }
 }
 
 @media (max-width: 680px) {
   #programs {
     grid-template-columns: 1fr; /* 1 vertical list on mobile screen sizes */
+  }
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .contact-card:nth-child(3) {
+    grid-column: auto !important;
   }
 }
