@@ -13,75 +13,87 @@ body {
   color: #333;
 }
 
-/* Header - Updated to Crisp White with Bottom Accent Line */
+/* Header - Modern Side-by-Side Corporate Balance */
 header {
   background: #ffffff; 
   color: #333333;
-  padding: 25px 30px;
-  border-bottom: 4px solid #ff9933;
+  padding: 15px 40px;
+  border-bottom: 4px solid #ff9933; /* Elegant saffron brand accent line */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .header-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  flex-direction: row;            /* Side-by-side horizontal desktop arrangement */
+  justify-content: space-between; /* Pushes logo box far-left and text box far-right */
+  align-items: center;            /* Centered vertical axis alignment */
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
 }
 
-/* Logo block */
-.logo {
+/* Left Column: Fixed Boundary Logo Controls */
+.logo-group {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;        /* Structural alignment hard-left */
+  flex-shrink: 0;                 /* Prevents title text blocks from crunching logo boundary */
+  width: 130px;                   /* FIXED INLINE BOUNDARY FOR LOGO ACCURACY */
 }
 
-.logo img {
-  width: 150px;
-  height: auto;
+.logo-group img {
+  width: 100%;                    /* Fits completely within parent layout constraint */
+  height: auto;                   /* Locks proper scaling rules proportion */
   display: block;
-  margin: 0 auto;
+  margin: 0;
 }
 
-.logo .tagline {
-  margin-top: 10px;
-  font-size: 20px;
+.logo-group .tagline {
+  margin-top: 6px;
+  font-size: 11px;                /* Neat, down-scaled tagline layout */
   color: #666666;
   font-style: italic;
-  text-align: center;
+  text-align: left;
+  line-height: 1.2;
 }
 
-/* Text block */
+/* Right Column: Information & Nav Text Alignment */
 .logo-text {
-  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;          /* Right-aligned text formatting layout */
+  text-align: right;
+  padding-left: 20px;
 }
 
 .logo-text h1 {
-  font-size: 36px;
+  font-size: 28px;                /* Trimmed title size for side layout sync */
   font-weight: bold;
   margin: 0;
   color: #ff9933;
 }
 
 .logo-text .registration {
-  margin-top: 8px;
-  font-size: 13px;
+  margin-top: 4px;
+  font-size: 11px;
   color: #666666;
 }
 
-/* Navigation menu centered below */
+/* Navigation Links Right Configuration */
 .logo-text nav {
-  margin-top: 18px;
+  margin-top: 12px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   flex-wrap: wrap;
 }
 
 .logo-text nav a {
   color: #333333;
-  margin: 0 16px;
+  margin-left: 24px;              /* Standard clear gaps between right menu elements */
+  margin-right: 0;
   text-decoration: none;
   font-weight: bold;
+  font-size: 14px;
   transition: color 0.2s ease;
 }
 
@@ -109,6 +121,17 @@ section h2 {
   margin-bottom: 35px;
   text-align: center;
   font-size: 32px;
+}
+
+.about-content, .contact-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-content p, .contact-content p {
+  margin-bottom: 15px;
+  font-size: 16px;
 }
 
 /* Programs Section - Optimized 3-Column Grid for 6 Cards */
@@ -202,11 +225,33 @@ footer {
   color: #fff;
   text-align: center;
   padding: 20px;
-  margin-top: 5px;
+  margin-top: 40px;
 }
 
-/* Responsive Viewports */
-@media (max-width: 1024px) {
+/* Responsive Viewports (Adapts nicely when screen scales down) */
+@media (max-width: 992px) {
+  .header-container {
+    flex-direction: column;       /* Clean central stacking for tablets and mobile viewports */
+    text-align: center;
+    gap: 15px;
+  }
+  .logo-group {
+    align-items: center;
+  }
+  .logo-group .tagline {
+    text-align: center;
+  }
+  .logo-text {
+    align-items: center;
+    text-align: center;
+    padding-left: 0;
+  }
+  .logo-text nav {
+    justify-content: center;
+  }
+  .logo-text nav a {
+    margin: 0 12px;
+  }
   #programs {
     grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
   }
