@@ -74,7 +74,7 @@ header {
 }
 
 .logo-text h1 {
-  font-size: 32px;                /* Prominent, readable size for a centered title */
+  font-size: 36px;                /* INCREASED: Bold, professional header size */
   font-weight: bold;
   margin: 0;
   color: #ff9933;
@@ -99,7 +99,7 @@ header {
   margin: 0 16px;                 /* Even distribution space on both sides of each link */
   text-decoration: none;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 16px;                /* INCREASED: Easier to read and tap */
   transition: color 0.2s ease;
 }
 
