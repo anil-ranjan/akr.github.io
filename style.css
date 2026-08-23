@@ -28,30 +28,33 @@ header {
 
 .logo {
   display: flex;
+  flex-direction: column; /* stack logo + tagline vertically */
   align-items: center;
 }
 
 .logo img {
-  max-height: 120px;   /* bigger logo */
-  margin-right: 15px;
+  max-height: 140px;   /* bigger logo */
+  display: block;
+  margin: 0 auto;
+}
+
+.logo .tagline {
+  margin-top: 8px;
+  font-size: 18px;
+  color: #fff;
+  font-style: italic;
+  text-align: center;
 }
 
 .logo-text h1 {
-  font-size: 30px;     /* larger foundation name */
+  font-size: 32px;     /* larger foundation name */
   font-weight: bold;
   margin: 0;
   color: #fff;
 }
 
-.logo-text .tagline {
-  margin: 5px 0 0;
-  font-size: 18px;
-  color: #fff;
-  font-style: italic;
-}
-
 .logo-text .registration {
-  margin: 5px 0 0;
+  margin-top: 5px;
   font-size: 14px;
   color: #f0e68c; /* pale yellow for visibility */
 }
@@ -183,7 +186,7 @@ footer {
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   nav {
