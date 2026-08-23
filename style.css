@@ -13,7 +13,7 @@ body {
   color: #333;
 }
 
-/* Header - Modern Side-by-Side Corporate Balance */
+/* Header - Modern Side-by-Side Balance with Centered Content */
 header {
   background: #ffffff; 
   color: #333333;
@@ -25,27 +25,27 @@ header {
 .header-container {
   display: flex;
   flex-direction: row;            /* Side-by-side horizontal desktop arrangement */
-  justify-content: space-between; /* Pushes logo box far-left and text box far-right */
+  justify-content: space-between; /* Spreads the logo and text boxes cleanly across the bar */
   align-items: center;            /* Centered vertical axis alignment */
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
 }
 
-/* Left Column: Fixed Boundary Logo Controls */
+/* Left Column: Fixed Boundary Logo Controls with Inline Tagline */
 .logo-group,
 .logo {
   display: flex;
   flex-direction: column;
   align-items: flex-start;        /* Structural alignment hard-left */
   flex-shrink: 0;                 /* Prevents title text blocks from crunching logo boundary */
-  width: 130px !important;        /* FIXED INLINE BOUNDARY FOR LOGO ACCURACY */
+  width: 180px !important;        /* Increased boundary width to allow tagline to stretch */
 }
 
 /* Forces image to remain bounded across all variations */
 .logo-group img,
 .logo img {
-  width: 100% !important;         /* Fits completely within parent layout constraint */
+  width: 130px !important;         /* Fits completely within parent layout constraint */
   max-width: 130px !important;    /* Strict hard-stop width ceiling */
   height: auto !important;        /* Locks proper scaling rules proportion */
   display: block !important;
@@ -54,51 +54,52 @@ header {
 
 .logo-group .tagline,
 .logo .tagline {
-  margin-top: 6px;
+  margin-top: 8px;
   font-size: 11px;                /* Neat, down-scaled tagline layout */
   color: #666666;
   font-style: italic;
   text-align: left;
   line-height: 1.2;
+  white-space: nowrap;            /* FORCES THE TAGLINE TO STAY ON ONE SINGLE ROW */
 }
 
-/* Right Column: Information & Nav Text Alignment */
+/* Center Column: Shifted to the Absolute Center of the Header Space */
 .logo-text {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;          /* Right-aligned text formatting layout */
-  text-align: right;
-  padding-left: 20px;
+  align-items: center;            /* Centers internal items horizontally */
+  text-align: center;             /* Centers text text characters */
+  flex-grow: 1;                   /* Expand container to occupy all empty space */
+  padding-right: 180px;           /* Mathematical counter-balance matching the logo width to center text perfectly */
 }
 
 .logo-text h1 {
-  font-size: 28px;                /* Trimmed title size for side layout sync */
+  font-size: 32px;                /* Prominent, readable size for a centered title */
   font-weight: bold;
   margin: 0;
   color: #ff9933;
 }
 
 .logo-text .registration {
-  margin-top: 4px;
+  margin-top: 6px;
   font-size: 11px;
   color: #666666;
 }
 
-/* Navigation Links Right Configuration */
+/* Navigation Links Balanced Center Configuration */
 .logo-text nav {
-  margin-top: 12px;
+  margin-top: 15px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;        /* Centers link rows horizontally */
   flex-wrap: wrap;
 }
 
 .logo-text nav a {
   color: #333333;
-  margin-left: 24px;              /* Standard clear gaps between right menu elements */
-  margin-right: 0;
+  margin: 0 16px;                 /* Even distribution space on both sides of each link */
   text-decoration: none;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 15px;
   transition: color 0.2s ease;
 }
 
@@ -234,7 +235,7 @@ footer {
 }
 
 /* Responsive Viewports (Adapts nicely when screen scales down) */
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   .header-container {
     flex-direction: column;       /* Clean central stacking for tablets and mobile viewports */
     text-align: center;
@@ -243,19 +244,22 @@ footer {
   .logo-group,
   .logo {
     align-items: center;
-  }
-  .logo-group .tagline,
-  .logo .tagline {
-    text-align: center;
+    width: auto !important;
   }
   .logo-group img,
   .logo img {
     margin: 0 auto !important;
   }
+  .logo-group .tagline,
+  .logo .tagline {
+    text-align: center;
+    white-space: normal;          /* Allows text wrapping on compact tablet and phone views */
+  }
   .logo-text {
     align-items: center;
     text-align: center;
     padding-left: 0;
+    padding-right: 0;             /* Removes the desktop counter-balance on mobile views */
   }
   .logo-text nav {
     justify-content: center;
