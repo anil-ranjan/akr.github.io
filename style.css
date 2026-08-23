@@ -22,10 +22,11 @@ header {
 
 .header-container {
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* align top edges */
   justify-content: space-between;
 }
 
+/* Logo block */
 .logo {
   display: flex;
   flex-direction: column; /* stack logo + tagline vertically */
@@ -46,6 +47,13 @@ header {
   text-align: center;
 }
 
+/* Text block */
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .logo-text h1 {
   font-size: 32px;     /* larger foundation name */
   font-weight: bold;
@@ -59,19 +67,21 @@ header {
   color: #f0e68c; /* pale yellow for visibility */
 }
 
-header nav {
+/* Navigation menu under name + CIN */
+.logo-text nav {
+  margin-top: 12px;
   display: flex;
   flex-wrap: wrap;
 }
 
-header nav a {
+.logo-text nav a {
   color: #fff;
-  margin: 0 15px;
+  margin: 0 12px;
   text-decoration: none;
   font-weight: bold;
 }
 
-header nav a:hover {
+.logo-text nav a:hover {
   text-decoration: underline;
 }
 
@@ -187,6 +197,15 @@ footer {
   .header-container {
     flex-direction: column;
     align-items: center;
+  }
+
+  .logo-text {
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo-text nav {
+    justify-content: center;
   }
 
   nav {
