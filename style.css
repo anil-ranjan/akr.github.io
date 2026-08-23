@@ -124,7 +124,7 @@ section {
 
 section h2 {
   color: #ff9933;
-  margin-bottom: 35px;
+  margin-bottom: 25px;
   text-align: center;
   font-size: 32px;
 }
@@ -141,21 +141,59 @@ section h2 {
 }
 
 /* ========================================================
-   ABOUT US SECTION - OPTIMIZED 2-COLUMN SPLIT SYSTEM
+   ABOUT US SECTION - INTERACTIVE TAB BAR NAVIGATION
    ======================================================== */
-.about-grid {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important; /* 2 perfect equal wide columns on desktop viewports */
-  gap: 30px !important;
+.about-tabs-menu {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 35px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 10px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #666666;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+  color: #ff9933;
+  background-color: #fff4e6;
+}
+
+/* Highlighted active button style selection state */
+.tab-btn.active {
+  color: #ffffff;
+  background-color: #ff9933;
+  box-shadow: 0 4px 10px rgba(255, 153, 51, 0.3);
+}
+
+/* Hidden container tab defaults */
+.about-tab-panel {
+  display: none;
   width: 100%;
 }
 
-/* Left Stack: Principles Vertical layout cluster container */
+/* Visually active view class toggle indicator */
+.about-tab-panel.active {
+  display: block;
+}
+
 .principles-column {
   display: flex !important;
   flex-direction: column !important;
   gap: 25px !important;
   width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .about-card {
@@ -188,39 +226,41 @@ section h2 {
   font-size: 14px !important;
   color: #555555 !important;
   line-height: 1.6 !important;
-  text-align: left !important; /* Left-aligned for premium content balance */
+  text-align: left !important;
   width: 100%;
 }
 
-/* Right Stack: Leadership Card stretching to match left layout heights */
+/* Leadership Card Container Constraints */
 .leadership-card {
-  justify-content: flex-start !important;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .director-container {
   display: flex !important;
-  flex-direction: column !important; /* Profile units stacked beautifully inside the right card */
-  gap: 20px !important;
+  flex-direction: row !important; /* Horizontal layout profile rows on desktop */
+  gap: 25px !important;
   width: 100%;
   margin-top: 10px;
 }
 
 .director-profile {
+  flex: 1 !important;
   background: #ffffff !important;
   border: 1px solid #eaeaea !important;
   border-radius: 8px !important;
-  padding: 20px 20px !important;
-  text-align: left !important; /* Left alignment for neat reading flow next to profiles */
+  padding: 25px 20px !important;
+  text-align: center !important;
   display: flex !important;
-  flex-direction: row !important; /* Photo on left side, data on right side */
+  flex-direction: column !important;
   align-items: center !important;
-  gap: 20px !important;
+  gap: 15px !important;
   box-shadow: 0 2px 6px rgba(0,0,0,0.01) !important;
 }
 
 .profile-pic {
-  width: 90px;
-  height: 90px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
@@ -235,31 +275,31 @@ section h2 {
   display: block;
 }
 
-.director-profile h4 {
+.director-info h4 {
   font-size: 18px !important;
   color: #333333 !important;
   font-weight: bold !important;
   margin-bottom: 2px !important;
 }
 
-.director-profile span {
+.director-info span {
   font-size: 12px !important;
   color: #ff9933 !important;
   font-weight: bold !important;
   display: block;
-  margin-bottom: 6px !important;
+  margin-bottom: 10px !important;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
-.director-profile p {
+.director-info p {
   font-size: 13px !important;
   color: #666666 !important;
-  line-height: 1.4 !important;
-  text-align: left !important;
+  line-height: 1.5 !important;
+  text-align: center !important;
 }
 
-/* Core Values checklist items styles rules */
+/* Core Values checklist styles rules */
 .values-list {
   list-style: none !important;
   padding: 0 !important;
@@ -276,7 +316,7 @@ section h2 {
 }
 
 .values-list li i {
-  color: #138808; /* Deep Green tick checkbox elements */
+  color: #138808; /* Deep Green checkbox tick accent marks */
   margin-right: 12px !important;
   margin-top: 4px !important;
   font-size: 14px !important;
@@ -366,22 +406,3 @@ section h2 {
 
 /* ========================================================
    CONTACT US SECTION - REARRANGED HORIZONTAL GRID 
-   ======================================================== */
-#contact {
-  padding: 60px 20px;
-  background-color: #fafafa;
-  border-top: 1px solid #eeeeee;
-  width: 100%;
-}
-
-.contact-grid {
-  display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
-  gap: 30px !important;
-  max-width: 1400px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.contact-card {
-  background: #ffffff !important;

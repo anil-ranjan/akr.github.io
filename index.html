@@ -13,14 +13,10 @@
   <!-- Header Section with Left-Aligned Logo and Centered Text Content -->
   <header>
     <div class="header-container">
-      
-      <!-- Left Column: Unified Logo & Tagline Group -->
       <div class="logo-group">
         <img src="logo.png" alt="Narod Sashaktikaran Foundation Logo">
         <p class="tagline">Empowerment Brings Prosperity</p>
       </div>
-      
-      <!-- Center Column: Contains Brand Title, Registration Data & Links Menu -->
       <div class="logo-text">
         <h1>Narod Sashaktikaran Foundation</h1>
         <p class="registration">CIN: U85420DL2023NPL422184, Registration No. u/s 354: AAZCA6303LF20261, Registration No. u/s 332: AAZCA6303LE20261</p>
@@ -32,21 +28,25 @@
           <a href="#contact">Contact</a>
         </nav>
       </div>
-      
     </div>
   </header>
 
   <!-- Hero Section -->
   <div class="hero" id="home"></div>
 
-  <!-- About Us Section - Grouped 2-Column Corporate Split System -->
+  <!-- About Us Section with Interactive Tab Navigation Menu Options -->
   <section id="about">
     <h2>About Us</h2>
-    <div class="about-grid">
-      
-      <!-- LEFT SIDE column: Vision, Mission & Core Values grouped together -->
+    
+    <!-- HORIZONTAL MENU BUTTONS CONTROLLER -->
+    <div class="about-tabs-menu">
+      <button class="tab-btn active" onclick="switchAboutTab(event, 'vision-tab')">Vision & Core Values</button>
+      <button class="tab-btn" onclick="switchAboutTab(event, 'leadership-tab')">Our Leadership</button>
+    </div>
+
+    <!-- TAB PANEL 1: VISION & CORE VALUES CONTENT (ACTIVE BY DEFAULT) -->
+    <div id="vision-tab" class="about-tab-panel active">
       <div class="principles-column">
-        
         <!-- Card 1: Vision & Mission -->
         <div class="about-card">
           <div class="about-icon"><i class="fas fa-bullseye"></i></div>
@@ -78,13 +78,14 @@
             </li>
           </ul>
         </div>
-
       </div>
+    </div>
 
-      <!-- RIGHT SIDE column: Dedicated Leadership Card Panel -->
+    <!-- TAB PANEL 2: LEADERSHIP PROFILES CONTENT (HIDDEN BY DEFAULT) -->
+    <div id="leadership-tab" class="about-tab-panel">
       <div class="about-card leadership-card">
         <div class="about-icon"><i class="fas fa-id-card"></i></div>
-        <h3>Our Leadership</h3>
+        <h3>Executive Leadership</h3>
         
         <div class="director-container">
           <!-- Director 1 Profile Box -->
@@ -112,16 +113,14 @@
           </div>
         </div>
       </div>
-
     </div>
+
   </section>
 
   <!-- Programs Section -->
   <section id="programs-section">
     <h2>Our Programs</h2>
     <div id="programs">
-      
-      <!-- Card 1: Education Initiatives -->
       <div class="program-card education">
         <div class="card-icon"><i class="fas fa-book-open"></i></div>
         <h3>Education Initiatives</h3>
@@ -131,8 +130,6 @@
           <li>Scholarships and study material distribution</li>
         </ul>
       </div>
-
-      <!-- Card 2: Health & Wellness -->
       <div class="program-card health">
         <div class="card-icon"><i class="fas fa-heartbeat"></i></div>
         <h3>Health & Wellness</h3>
@@ -142,8 +139,6 @@
           <li>Mental health and counselling support</li>
         </ul>
       </div>
-
-      <!-- Card 3: Community Empowerment -->
       <div class="program-card empowerment">
         <div class="card-icon"><i class="fas fa-users"></i></div>
         <h3>Community Empowerment</h3>
@@ -153,8 +148,6 @@
           <li>Rural development and livelihood support</li>
         </ul>
       </div>
-
-      <!-- Card 4: Social Welfare & Inclusion -->
       <div class="program-card welfare">
         <div class="card-icon"><i class="fas fa-leaf"></i></div>
         <h3>Social Welfare & Inclusion</h3>
@@ -164,8 +157,6 @@
           <li>Environmental awareness, clean water initiatives</li>
         </ul>
       </div>
-
-      <!-- Card 5: Cow Protection & Welfare -->
       <div class="program-card cow-welfare">
         <div class="card-icon"><i class="fas fa-cow"></i></div>
         <h3>Cow Protection & Welfare</h3>
@@ -175,8 +166,6 @@
           <li>Developing and improving indigenous (Bhartiya) cattle breeds</li>
         </ul>
       </div>
-
-      <!-- Card 6: Cow-Based Economy & Dairy Development -->
       <div class="program-card dairy-economy">
         <div class="card-icon"><i class="fas fa-hand-holding-hand"></i></div>
         <h3>Cow-Based Economy & Dairy</h3>
@@ -186,7 +175,6 @@
           <li>Producing high-quality organic compost and bio-technical manures</li>
         </ul>
       </div>
-
     </div>
   </section>
 
@@ -207,15 +195,11 @@
   <section id="contact">
     <h2>Contact Us</h2>
     <div class="contact-grid">
-      
-      <!-- Card 1: Email Box -->
       <div class="contact-card">
         <div class="contact-icon"><i class="fas fa-envelope"></i></div>
         <h3>Email</h3>
         <p><a href="mailto:narodsashaktikaranfoundation@gmail.com">narodsashaktikaranfoundation@gmail.com</a></p>
       </div>
-
-      <!-- Card 2: Phone Box -->
       <div class="contact-card">
         <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
         <h3>Phone</h3>
@@ -224,14 +208,11 @@
           <a href="tel:+918800580429">+91 8800580429</a>
         </p>
       </div>
-
-      <!-- Card 3: Address Box -->
       <div class="contact-card">
         <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
         <h3>Address</h3>
         <p>F-12A, Mahavir Enclave, Gali No. 04,<br>New Delhi, Pin: 110045</p>
       </div>
-
     </div>
   </section>
 
@@ -240,5 +221,10 @@
     <p>© 2026 Narod Sashaktikaran Foundation | Website: www.narodfoundation.org</p>
   </footer>
 
-</body>
-</html>
+  <!-- SMART JAVASCRIPT ENGINE HANDLER TO TOGGLE THE CHOSEN TABS -->
+  <script>
+    function switchAboutTab(event, tabId) {
+      // Hide all content panels completely
+      var panels = document.getElementsByClassName('about-tab-panel');
+      for (var i = 0; i < panels.length; i++) {
+        panels[i].classList.remove('active');
