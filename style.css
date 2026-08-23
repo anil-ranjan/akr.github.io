@@ -117,7 +117,7 @@ header {
 
 /* Sections */
 section {
-  padding: 40px 20px;
+  padding: 60px 20px;
   max-width: 1400px;
   margin: auto;
 }
@@ -138,6 +138,148 @@ section h2 {
 .about-content p {
   margin-bottom: 15px;
   font-size: 16px;
+}
+
+/* ========================================================
+   ABOUT US SECTION - OPTIMIZED 2-COLUMN SPLIT SYSTEM
+   ======================================================== */
+.about-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important; /* 2 perfect equal wide columns on desktop viewports */
+  gap: 30px !important;
+  width: 100%;
+}
+
+/* Left Stack: Principles Vertical layout cluster container */
+.principles-column {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 25px !important;
+  width: 100%;
+}
+
+.about-card {
+  background: #fdfdfd !important;
+  border: 1px solid #f0f0f0 !important;
+  border-radius: 12px !important;
+  padding: 30px 25px !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 100%;
+}
+
+.about-icon {
+  font-size: 32px !important;
+  color: #ff9933;
+  margin-bottom: 15px !important;
+}
+
+.about-card h3 {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  color: #ff9933;
+  margin-bottom: 20px !important;
+  text-align: center;
+}
+
+.about-card p {
+  font-size: 14px !important;
+  color: #555555 !important;
+  line-height: 1.6 !important;
+  text-align: left !important; /* Left-aligned for premium content balance */
+  width: 100%;
+}
+
+/* Right Stack: Leadership Card stretching to match left layout heights */
+.leadership-card {
+  justify-content: flex-start !important;
+}
+
+.director-container {
+  display: flex !important;
+  flex-direction: column !important; /* Profile units stacked beautifully inside the right card */
+  gap: 20px !important;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.director-profile {
+  background: #ffffff !important;
+  border: 1px solid #eaeaea !important;
+  border-radius: 8px !important;
+  padding: 20px 20px !important;
+  text-align: left !important; /* Left alignment for neat reading flow next to profiles */
+  display: flex !important;
+  flex-direction: row !important; /* Photo on left side, data on right side */
+  align-items: center !important;
+  gap: 20px !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.01) !important;
+}
+
+.profile-pic {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 3px solid #fff4e6;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.director-profile h4 {
+  font-size: 18px !important;
+  color: #333333 !important;
+  font-weight: bold !important;
+  margin-bottom: 2px !important;
+}
+
+.director-profile span {
+  font-size: 12px !important;
+  color: #ff9933 !important;
+  font-weight: bold !important;
+  display: block;
+  margin-bottom: 6px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.director-profile p {
+  font-size: 13px !important;
+  color: #666666 !important;
+  line-height: 1.4 !important;
+  text-align: left !important;
+}
+
+/* Core Values checklist items styles rules */
+.values-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100%;
+}
+
+.values-list li {
+  font-size: 14px !important;
+  color: #444444 !important;
+  margin-bottom: 12px !important;
+  display: flex !important;
+  align-items: flex-start !important;
+}
+
+.values-list li i {
+  color: #138808; /* Deep Green tick checkbox elements */
+  margin-right: 12px !important;
+  margin-top: 4px !important;
+  font-size: 14px !important;
 }
 
 /* Programs Section - Optimized 3-Column Grid for 6 Cards */
@@ -166,7 +308,6 @@ section h2 {
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
-/* Card Icons */
 .card-icon {
   font-size: 42px;
   margin-bottom: 15px;
@@ -179,12 +320,11 @@ section h2 {
   text-align: center;
 }
 
-/* Styled Bullet Point Layout */
 .program-card ul {
-  list-style-type: none; /* Clear default bullets */
+  list-style-type: none;
   padding: 0;
   margin: 0;
-  text-align: left; /* Align text left inside card for readability */
+  text-align: left;
   width: 100%;
 }
 
@@ -194,10 +334,9 @@ section h2 {
   color: #444444;
   line-height: 1.5;
   position: relative;
-  padding-left: 20px; /* Offset text to fit custom icon bullet */
+  padding-left: 20px;
 }
 
-/* Decorative matching custom dash bullet */
 .program-card ul li::before {
   content: "•";
   position: absolute;
@@ -206,23 +345,23 @@ section h2 {
   font-size: 18px;
 }
 
-/* Color Accents (Icons, Headlines, Bullets, and Soft Hovers) */
+/* Accent Card Colors */
 .program-card.cow-welfare .card-icon i, .program-card.cow-welfare h3, .program-card.cow-welfare ul li::before { color: #ff9933; }
 .program-card.cow-welfare:hover { background-color: #fffaf4; }
 
-.program-card.dairy-economy .card-icon i, .program-card.dairy-economy h3, .program-card.dairy-economy ul li::before { color: #b45309; } /* Deep Amber */
+.program-card.dairy-economy .card-icon i, .program-card.dairy-economy h3, .program-card.dairy-economy ul li::before { color: #b45309; }
 .program-card.dairy-economy:hover { background-color: #fefaf0; }
 
-.program-card.education .card-icon i, .program-card.education h3, .program-card.education ul li::before { color: #f59e0b; } /* Orange-Yellow */
+.program-card.education .card-icon i, .program-card.education h3, .program-card.education ul li::before { color: #f59e0b; }
 .program-card.education:hover { background-color: #fffbeb; }
 
-.program-card.health .card-icon i, .program-card.health h3, .program-card.health ul li::before { color: #e63946; } /* Crimson Red */
+.program-card.health .card-icon i, .program-card.health h3, .program-card.health ul li::before { color: #e63946; }
 .program-card.health:hover { background-color: #fff5f5; }
 
-.program-card.empowerment .card-icon i, .program-card.empowerment h3, .program-card.empowerment ul li::before { color: #1d4ed8; } /* Corporate Blue */
+.program-card.empowerment .card-icon i, .program-card.empowerment h3, .program-card.empowerment ul li::before { color: #1d4ed8; }
 .program-card.empowerment:hover { background-color: #f0f5ff; }
 
-.program-card.welfare .card-icon i, .program-card.welfare h3, .program-card.welfare ul li::before { color: #138808; } /* Saffron Green */
+.program-card.welfare .card-icon i, .program-card.welfare h3, .program-card.welfare ul li::before { color: #138808; }
 .program-card.welfare:hover { background-color: #f4fbf3; }
 
 /* ========================================================
@@ -230,14 +369,14 @@ section h2 {
    ======================================================== */
 #contact {
   padding: 60px 20px;
-  background-color: #fafafa; /* Separate from previous white sections */
+  background-color: #fafafa;
   border-top: 1px solid #eeeeee;
   width: 100%;
 }
 
 .contact-grid {
   display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important; /* 3 clean horizontal side-by-side columns */
+  grid-template-columns: repeat(3, 1fr) !important;
   gap: 30px !important;
   max-width: 1400px;
   margin: 0 auto;
@@ -246,117 +385,3 @@ section h2 {
 
 .contact-card {
   background: #ffffff !important;
-  border: 1px solid #e0e0e0 !important;
-  border-radius: 12px !important;
-  padding: 30px 20px !important;
-  text-align: center !important;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03) !important;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-}
-
-.contact-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
-  border-color: #ff9933 !important; /* Saffron highlight on card hover */
-}
-
-.contact-icon {
-  font-size: 30px !important;
-  color: #ff9933 !important;
-  background-color: #fff4e6 !important;
-  width: 60px !important;
-  height: 60px !important;
-  border-radius: 50% !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin-bottom: 15px !important;
-}
-
-.contact-card h3 {
-  font-size: 18px !important;
-  font-weight: bold !important;
-  color: #333333 !important;
-  margin-bottom: 10px !important;
-}
-
-.contact-card p,
-.contact-card a {
-  font-size: 14px !important;
-  color: #555555 !important;
-  text-decoration: none !important;
-  line-height: 1.5 !important;
-}
-
-.contact-card a:hover {
-  color: #ff9933 !important;
-  text-decoration: underline !important;
-}
-
-/* Footer */
-footer {
-  background: #138808;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-}
-
-/* Responsive Viewports (Adapts nicely when screen scales down) */
-@media (max-width: 1024px) {
-  .header-container {
-    flex-direction: column;       /* Clean central stacking for tablets and mobile viewports */
-    text-align: center;
-    gap: 15px;
-  }
-  .logo-group,
-  .logo {
-    align-items: center;
-    width: auto !important;
-  }
-  .logo-group img,
-  .logo img {
-    margin: 0 auto !important;
-  }
-  .logo-group .tagline,
-  .logo .tagline {
-    text-align: center;
-    white-space: normal !important;
-  }
-  .logo-text {
-    align-items: center !important;
-    text-align: center !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-  .logo-text nav {
-    justify-content: center !important;
-  }
-  .logo-text nav a {
-    margin: 0 12px;
-  }
-  #programs {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
-  }
-  .contact-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-  .contact-card:nth-child(3) {
-    grid-column: span 2 !important;
-  }
-}
-
-@media (max-width: 680px) {
-  #programs {
-    grid-template-columns: 1fr; /* 1 vertical list on mobile screen sizes */
-  }
-  .contact-grid {
-    grid-template-columns: 1fr !important;
-  }
-  .contact-card:nth-child(3) {
-    grid-column: auto !important;
-  }
-}

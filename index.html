@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Narod Sashaktikaran Foundation</title>
-  <!-- FontAwesome for card grid and contact section icons -->
+  <!-- FontAwesome for card grids, custom checkboxes, and contact section icons -->
   <link rel="stylesheet" href="https://cloudflare.com">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -39,21 +39,82 @@
   <!-- Hero Section -->
   <div class="hero" id="home"></div>
 
-  <!-- About Us Section -->
+  <!-- About Us Section - Grouped 2-Column Corporate Split System -->
   <section id="about">
     <h2>About Us</h2>
-    <div class="about-content">
-      <p><strong>Vision:</strong> To empower marginalized communities by providing access to education, healthcare, livelihood opportunities, and social inclusion.</p>
-      <p><strong>Leadership:</strong> Directed by Anil Ranjan and Ravi Sharma.</p>
-      <p><strong>Values:</strong> Transparency, inclusivity, sustainability, and empowerment.</p>
+    <div class="about-grid">
+      
+      <!-- LEFT SIDE: Grouped Principles (Vision, Mission & Core Values Together) -->
+      <div class="principles-column">
+        
+        <!-- Card 1: Vision & Mission -->
+        <div class="about-card">
+          <div class="about-icon"><i class="fas fa-bullseye"></i></div>
+          <h3>Vision & Mission</h3>
+          <p>To empower marginalized, indigenous, and tribal communities by providing holistic access to structured education, essential healthcare, and sustainable livelihood frameworks.</p>
+          <p style="margin-top: 15px;">We strive to drive prosperity across Bharat through the preservation of traditional wellness systems like Yoga and Ayurveda, alongside a dedicated commitment to cow protection, cattle rescue, and promoting self-reliant, cow-based rural economies.</p>
+        </div>
+
+        <!-- Card 2: Core Values -->
+        <div class="about-card">
+          <div class="about-icon"><i class="fas fa-handshake"></i></div>
+          <h3>Core Values</h3>
+          <ul class="values-list">
+            <li>
+              <i class="fas fa-check-circle"></i> 
+              <div><strong>Transparency:</strong> Strictly reinvesting all operational income directly back into fueling community welfare programs.</div>
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i> 
+              <div><strong>Inclusivity:</strong> Extending education, relief, and healthcare services to marginalized and tribal populations without discrimination.</div>
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i> 
+              <div><strong>Compassion (Karuna):</strong> Practicing a dedicated commitment to protecting and nurturing animal life, specifically cow-progeny.</div>
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i> 
+              <div><strong>Sustainability:</strong> Building self-reliant rural micro-economies using organic composting and eco-friendly practices.</div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- RIGHT SIDE: Dedicated Leadership Side-by-Side Panel -->
+      <div class="about-card leadership-card">
+        <div class="about-icon"><i class="fas fa-id-card"></i></div>
+        <h3>Our Leadership</h3>
+        
+        <div class="director-container">
+          <!-- Director 1 Profile -->
+          <div class="director-profile">
+            <div class="profile-pic">
+              <img src="anil_ranjan.jpg" alt="Anil Ranjan">
+            </div>
+            <h4>Anil Ranjan</h4>
+            <span>Director</span>
+            <p>Driving operational excellence and executing sustainable grassroots community development initiatives across rural regions.</p>
+          </div>
+
+          <!-- Director 2 Profile - Pre-coded to load ravi_sharma.jpg seamlessly -->
+          <div class="director-profile">
+            <div class="profile-pic">
+              <img src="ravi_sharma.jpg" alt="Ravi Sharma" onerror="this.src='https://iconify.design'; this.style.padding='15px'; this.style.backgroundColor='#fff4e6';">
+            </div>
+            <h4>Ravi Sharma</h4>
+            <span>Director</span>
+            <p>Guiding organizational policy, legal regulatory compliance, financial strategy, and community outreach frameworks.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- Programs Section -->
   <section id="programs-section">
     <h2>Our Programs</h2>
-    
-    <!-- 6 Balanced Cards Layout Container -->
     <div id="programs">
       
       <!-- Card 1: Education Initiatives -->
@@ -138,7 +199,7 @@
     </div>
   </section>
 
-  <!-- Contact Us Section (Updated with two mobile numbers) -->
+  <!-- Contact Us Section -->
   <section id="contact">
     <h2>Contact Us</h2>
     <div class="contact-grid">
@@ -164,7 +225,7 @@
       <div class="contact-card">
         <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
         <h3>Address</h3>
-        <p>F-12A, Mahavir Enclave, Gali No. 04,<br>New Delhi, Pin: 110045 </p>
+        <p>F-12A, Mahavir Enclave, Gali No. 04,<br>New Delhi, Pin: 110045</p>
       </div>
 
     </div>
