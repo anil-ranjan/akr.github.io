@@ -17,20 +17,39 @@ body {
 header {
   background: #ff9933; /* saffron */
   color: #fff;
-  padding: 20px;
-  text-align: center;
-  position: relative;
+  padding: 15px 30px;
 }
 
-header .logo img {
-  max-height: 80px;
-  display: block;
-  margin: 0 auto 10px;
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  max-height: 60px;
+  margin-right: 15px;
+}
+
+.logo-text h1 {
+  font-size: 20px;
+  margin: 0;
+  color: #fff;
+}
+
+.logo-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #fff;
 }
 
 header nav {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -51,21 +70,13 @@ header nav a:hover {
   font-size: 28px;
   cursor: pointer;
   color: #fff;
-  position: absolute;
-  top: 20px;
-  right: 20px;
 }
 
 /* Hero Section */
 .hero {
   background: linear-gradient(to right, #ff9933, #ffffff, #138808); /* saffron-white-green */
-  color: #000;
   text-align: center;
   padding: 60px 20px;
-}
-
-.hero h2 {
-  margin-bottom: 20px;
 }
 
 .hero button {
@@ -127,19 +138,19 @@ section h2 {
 }
 
 /* Distinct Color Accents */
-.program-card.education i { color: #ff9933; }   /* saffron */
+.program-card.education i { color: #ff9933; }
 .program-card.education h3 { color: #ff9933; }
 .program-card.education:hover { background-color: #fff4e6; }
 
-.program-card.health i { color: #e63946; }      /* red */
+.program-card.health i { color: #e63946; }
 .program-card.health h3 { color: #e63946; }
 .program-card.health:hover { background-color: #ffe6e6; }
 
-.program-card.empowerment i { color: #1d4ed8; } /* blue */
+.program-card.empowerment i { color: #1d4ed8; }
 .program-card.empowerment h3 { color: #1d4ed8; }
 .program-card.empowerment:hover { background-color: #e6f0ff; }
 
-.program-card.welfare i { color: #138808; }     /* green */
+.program-card.welfare i { color: #138808; }
 .program-card.welfare h3 { color: #138808; }
 .program-card.welfare:hover { background-color: #e6ffe6; }
 
@@ -176,19 +187,29 @@ footer {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   nav {
     display: none;
     flex-direction: column;
     background: #138808;
+    width: 100%;
     padding: 10px;
   }
+
   nav.active {
     display: flex;
   }
-  .menu-toggle {
-    display: block;
-  }
+
   nav a {
     margin: 10px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+    align-self: flex-end;
   }
 }
