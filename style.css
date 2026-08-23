@@ -33,22 +33,27 @@ header {
 }
 
 /* Left Column: Fixed Boundary Logo Controls */
-.logo-group {
+.logo-group,
+.logo {
   display: flex;
   flex-direction: column;
   align-items: flex-start;        /* Structural alignment hard-left */
   flex-shrink: 0;                 /* Prevents title text blocks from crunching logo boundary */
-  width: 130px;                   /* FIXED INLINE BOUNDARY FOR LOGO ACCURACY */
+  width: 130px !important;        /* FIXED INLINE BOUNDARY FOR LOGO ACCURACY */
 }
 
-.logo-group img {
-  width: 100%;                    /* Fits completely within parent layout constraint */
-  height: auto;                   /* Locks proper scaling rules proportion */
-  display: block;
-  margin: 0;
+/* Forces image to remain bounded across all variations */
+.logo-group img,
+.logo img {
+  width: 100% !important;         /* Fits completely within parent layout constraint */
+  max-width: 130px !important;    /* Strict hard-stop width ceiling */
+  height: auto !important;        /* Locks proper scaling rules proportion */
+  display: block !important;
+  margin: 0 !important;
 }
 
-.logo-group .tagline {
+.logo-group .tagline,
+.logo .tagline {
   margin-top: 6px;
   font-size: 11px;                /* Neat, down-scaled tagline layout */
   color: #666666;
@@ -235,11 +240,17 @@ footer {
     text-align: center;
     gap: 15px;
   }
-  .logo-group {
+  .logo-group,
+  .logo {
     align-items: center;
   }
-  .logo-group .tagline {
+  .logo-group .tagline,
+  .logo .tagline {
     text-align: center;
+  }
+  .logo-group img,
+  .logo img {
+    margin: 0 auto !important;
   }
   .logo-text {
     align-items: center;
