@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Narod Sashaktikaran Foundation</title>
-  <!-- FontAwesome for card grids, custom checkboxes, and contact section icons -->
+  <!-- FontAwesome for card grids, checkboxes, and contact section icons -->
   <link rel="stylesheet" href="https://cloudflare.com">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -13,14 +13,10 @@
   <!-- Header Section with Left-Aligned Logo and Centered Text Content -->
   <header>
     <div class="header-container">
-      
-      <!-- Left Column: Unified Logo & Tagline Group -->
       <div class="logo-group">
         <img src="logo.png" alt="Narod Sashaktikaran Foundation Logo">
         <p class="tagline">Empowerment Brings Prosperity</p>
       </div>
-      
-      <!-- Center Column: Contains Brand Title, Registration Data & Links Menu -->
       <div class="logo-text">
         <h1>Narod Sashaktikaran Foundation</h1>
         <p class="registration">CIN: U85420DL2023NPL422184, Registration No. u/s 354: AAZCA6303LF20261, Registration No. u/s 332: AAZCA6303LE20261</p>
@@ -32,7 +28,6 @@
           <a href="#contact">Contact</a>
         </nav>
       </div>
-      
     </div>
   </header>
 
@@ -232,21 +227,46 @@
       </div>
 
       <!-- Card 3: Address Box -->
-      <!-- Card 3: Address Box -->
       <div class="contact-card">
         <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
         <h3>Address</h3>
-        <p>F-12A, Mahavir Enclave, Gali No. 04,<br>New Delhi, Pin: 110045 </p>
+        <p>F-12A, Mahavir Enclave, Gali No. 04,<br>New Delhi, Pin: 110045</p>
       </div>
 
     </div>
   </section>
-
-  <!-- Footer -->
+    <!-- Footer Section -->
   <footer>
     <p>© 2026 Narod Sashaktikaran Foundation | Website: www.narodfoundation.org</p>
   </footer>
 
+  <!-- DYNAMIC JAVASCRIPT CLICK SWITCHING CONTROLLER -->
+  <script>
+    function switchAboutTab(targetPanelId) {
+      // 1. Hide all about tab content panels completely
+      var panels = document.querySelectorAll('.about-tab-panel');
+      for (var i = 0; i < panels.length; i++) {
+        panels[i].classList.remove('active');
+      }
+
+      // 2. Remove the orange active highlight from all tab buttons
+      var buttons = document.querySelectorAll('.tab-btn');
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove('active');
+      }
+
+      // 3. Show the clicked panel and highlight the correct button manually
+      document.getElementById(targetPanelId).classList.add('active');
+      
+      if (targetPanelId === 'vision-tab') {
+        document.getElementById('btn-vision').classList.add('active');
+      } else {
+        document.getElementById('btn-leadership').classList.add('active');
+      }
+    }
+  </script>
+
 </body>
 </html>
+
 
