@@ -13,11 +13,13 @@ body {
   color: #333;
 }
 
-/* Header */
+/* Header - Updated to Crisp White with Bottom Accent Line */
 header {
-  background: #ff9933; /* saffron */
-  color: #fff;
-  padding: 20px 30px;
+  background: #ffffff; 
+  color: #333333;
+  padding: 25px 30px;
+  border-bottom: 4px solid #ff9933; /* Elegant saffron brand accent line */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .header-container {
@@ -27,7 +29,7 @@ header {
   text-align: center;
 }
 
-/* Logo block */
+/* Logo block - Enriched Sizing */
 .logo {
   display: flex;
   flex-direction: column;
@@ -35,15 +37,16 @@ header {
 }
 
 .logo img {
-  max-height: 200px;
+  width: 150px; /* Enforced size to keep logo large and prominent */
+  height: auto;
   display: block;
   margin: 0 auto;
 }
 
 .logo .tagline {
-  margin-top: 8px;
-  font-size: 22px;
-  color: #fff;
+  margin-top: 10px;
+  font-size: 20px;
+  color: #666666; /* Charcoal grey for high visibility on white */
   font-style: italic;
   text-align: center;
 }
@@ -54,34 +57,36 @@ header {
 }
 
 .logo-text h1 {
-  font-size: 34px;
+  font-size: 36px;
   font-weight: bold;
   margin: 0;
-  color: #fff;
+  color: #ff9933; /* Saffron title text pops cleanly against white */
 }
 
 .logo-text .registration {
-  margin-top: 5px;
-  font-size: 14px;
-  color: #f0e68c;
+  margin-top: 8px;
+  font-size: 13px;
+  color: #666666; /* Clean dark grey for legible registration numbers */
 }
 
 /* Navigation menu centered below */
 .logo-text nav {
-  margin-top: 12px;
+  margin-top: 18px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .logo-text nav a {
-  color: #fff;
-  margin: 0 12px;
+  color: #333333; /* Strong dark link color for contrast */
+  margin: 0 16px;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.2s ease;
 }
 
 .logo-text nav a:hover {
+  color: #ff9933; /* Highlights in orange on hover */
   text-decoration: underline;
 }
 
