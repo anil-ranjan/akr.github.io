@@ -13,7 +13,7 @@ body {
   color: #333;
 }
 
-/* Header - Modern Side-by-Side Balance with Centered Content */
+/* Header - Modern Side-by-Side Corporate Balance with Centered Content */
 header {
   background: #ffffff; 
   color: #333333;
@@ -25,27 +25,27 @@ header {
 .header-container {
   display: flex;
   flex-direction: row;            /* Side-by-side horizontal desktop arrangement */
-  justify-content: space-between; /* Spreads the logo and text boxes cleanly across the bar */
+  justify-content: space-between; /* Spreads layout nodes cleanly across the desktop row */
   align-items: center;            /* Centered vertical axis alignment */
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
 }
 
-/* Left Column: Fixed Boundary Logo Controls with Inline Tagline */
+/* Left Column: Fixed Boundary Logo Controls with Single-Line Tagline */
 .logo-group,
 .logo {
   display: flex;
   flex-direction: column;
   align-items: flex-start;        /* Structural alignment hard-left */
-  flex-shrink: 0;                 /* Prevents title text blocks from crunching logo boundary */
-  width: 180px !important;        /* Increased boundary width to allow tagline to stretch */
+  flex-shrink: 0;                 /* Prevents center content from squeezing the logo area */
+  width: 200px !important;        /* Broadened bounds to ensure tagline fits inline */
 }
 
 /* Forces image to remain bounded across all variations */
 .logo-group img,
 .logo img {
-  width: 130px !important;         /* Fits completely within parent layout constraint */
+  width: 130px !important;        /* Fits completely within parent layout constraint */
   max-width: 130px !important;    /* Strict hard-stop width ceiling */
   height: auto !important;        /* Locks proper scaling rules proportion */
   display: block !important;
@@ -60,17 +60,17 @@ header {
   font-style: italic;
   text-align: left;
   line-height: 1.2;
-  white-space: nowrap;            /* FORCES THE TAGLINE TO STAY ON ONE SINGLE ROW */
+  white-space: nowrap !important; /* FORCES THE TAGLINE TO STAY ON ONE SINGLE ROW */
 }
 
 /* Center Column: Shifted to the Absolute Center of the Header Space */
 .logo-text {
   display: flex;
   flex-direction: column;
-  align-items: center;            /* Centers internal items horizontally */
-  text-align: center;             /* Centers text text characters */
-  flex-grow: 1;                   /* Expand container to occupy all empty space */
-  padding-right: 180px;           /* Mathematical counter-balance matching the logo width to center text perfectly */
+  align-items: center !important; /* Centers internal elements horizontally */
+  text-align: center !important;  /* Centers text typography content */
+  flex-grow: 1;                   /* Expand container to occupy remaining header track */
+  padding-right: 200px !important;/* Mathematical counter-balance to center text perfectly against logo */
 }
 
 .logo-text h1 {
@@ -90,7 +90,7 @@ header {
 .logo-text nav {
   margin-top: 15px;
   display: flex;
-  justify-content: center;        /* Centers link rows horizontally */
+  justify-content: center !important; /* Centers link rows horizontally */
   flex-wrap: wrap;
 }
 
@@ -253,16 +253,16 @@ footer {
   .logo-group .tagline,
   .logo .tagline {
     text-align: center;
-    white-space: normal;          /* Allows text wrapping on compact tablet and phone views */
+    white-space: normal !important; /* Safely breaks into rows if device viewport screens drop below asset thresholds */
   }
   .logo-text {
-    align-items: center;
-    text-align: center;
-    padding-left: 0;
-    padding-right: 0;             /* Removes the desktop counter-balance on mobile views */
+    align-items: center !important;
+    text-align: center !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;   /* Removes the desktop counter-balance centering track properties on mobile viewports */
   }
   .logo-text nav {
-    justify-content: center;
+    justify-content: center !important;
   }
   .logo-text nav a {
     margin: 0 12px;
