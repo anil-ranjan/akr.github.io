@@ -32,21 +32,28 @@ header {
 }
 
 .logo img {
-  max-height: 120px;   /* increased logo size */
+  max-height: 120px;   /* bigger logo */
   margin-right: 15px;
 }
 
 .logo-text h1 {
-  font-size: 26px;     /* larger foundation name */
+  font-size: 30px;     /* larger foundation name */
+  font-weight: bold;
   margin: 0;
   color: #fff;
 }
 
-.logo-text p {
-  margin: 5px 0 0;     /* tagline directly below */
-  font-size: 16px;
+.logo-text .tagline {
+  margin: 5px 0 0;
+  font-size: 18px;
   color: #fff;
   font-style: italic;
+}
+
+.logo-text .registration {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #f0e68c; /* pale yellow for visibility */
 }
 
 header nav {
