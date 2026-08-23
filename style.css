@@ -258,22 +258,23 @@ section h2 {
   box-shadow: 0 2px 6px rgba(0,0,0,0.01) !important;
 }
 
-/* INCREASED CONTAINER DIMS TO ACCOMMODATE LARGER IMAGES */
-.profile-pic {
-  width: 140px !important;        /* Expanded width ceiling */
-  height: 140px !important;       /* Expanded height ceiling */
-  border-radius: 50% !important;  /* Retains circular masking integrity */
+/* HIGHLY SPECIFIC SELECTION OVERRIDE TO EXPAND PHOTO CEILING */
+.director-profile .profile-pic {
+  width: 150px !important;        /* Forcefully widened window from 100px */
+  height: 150px !important;       /* Balanced height tracker */
+  border-radius: 50% !important;  /* Sharp circular mask bounds */
   overflow: hidden !important;
   flex-shrink: 0 !important;
-  border: 4px solid #fff4e6 !important; /* Prominent profile border track */
+  border: 4px solid #fff4e6 !important; /* Elegant brand border accent frame */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  margin: 0 auto 5px auto !important;
 }
 
-/* FORCES CORE IMAGE FRAME SCALING INTEGRITY WITHOUT SQUISHING */
-.profile-pic img {
+/* GUARANTEES IMAGE EXPANDS TO OCCUPY THE WHOLE INSIDE TRACK WINDOW */
+.director-profile .profile-pic img {
   width: 100% !important;
   height: 100% !important;
-  object-fit: cover !important;   /* Centers asset natively inside parent container */
+  object-fit: cover !important;   /* Clips edges evenly without flattening aspect ratios */
   display: block !important;
 }
 
@@ -300,7 +301,6 @@ section h2 {
   line-height: 1.5 !important;
   text-align: center !important;
 }
-
 /* Core Values checklist styles rules */
 .values-list {
   list-style: none !important;
@@ -540,4 +540,3 @@ footer {
     grid-column: auto !important;
   }
 }
-
