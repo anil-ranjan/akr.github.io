@@ -18,7 +18,7 @@ header {
   background: #ffffff; 
   color: #333333;
   padding: 25px 30px;
-  border-bottom: 4px solid #ff9933; /* Elegant saffron brand accent line */
+  border-bottom: 4px solid #ff9933;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
@@ -37,7 +37,7 @@ header {
 }
 
 .logo img {
-  width: 150px; /* Enforced size to keep logo large and prominent */
+  width: 150px;
   height: auto;
   display: block;
   margin: 0 auto;
@@ -46,7 +46,7 @@ header {
 .logo .tagline {
   margin-top: 10px;
   font-size: 20px;
-  color: #666666; /* Charcoal grey for high visibility on white background */
+  color: #666666;
   font-style: italic;
   text-align: center;
 }
@@ -60,13 +60,13 @@ header {
   font-size: 36px;
   font-weight: bold;
   margin: 0;
-  color: #ff9933; /* Saffron title text pops cleanly against white header */
+  color: #ff9933;
 }
 
 .logo-text .registration {
   margin-top: 8px;
   font-size: 13px;
-  color: #666666; /* Dark grey for legible registration data */
+  color: #666666;
 }
 
 /* Navigation menu centered below */
@@ -78,7 +78,7 @@ header {
 }
 
 .logo-text nav a {
-  color: #333333; /* Strong dark link color for contrast */
+  color: #333333;
   margin: 0 16px;
   text-decoration: none;
   font-weight: bold;
@@ -86,7 +86,7 @@ header {
 }
 
 .logo-text nav a:hover {
-  color: #ff9933; /* Highlights in orange on hover */
+  color: #ff9933;
   text-decoration: underline;
 }
 
@@ -100,90 +100,101 @@ header {
 /* Sections */
 section {
   padding: 40px 20px;
-  max-width: 1400px;   /* wider so 4 cards fit */
+  max-width: 1400px;
   margin: auto;
 }
 
 section h2 {
   color: #ff9933;
-  margin-bottom: 30px; /* Space between heading and row content */
+  margin-bottom: 35px;
   text-align: center;
+  font-size: 32px;
 }
 
-.about-content, .contact-content {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.about-content p, .contact-content p {
-  margin-bottom: 15px;
-  font-size: 16px;
-}
-
-/* Programs Section - Modern Responsive Grid */
+/* Programs Section - Optimized 3-Column Grid for 6 Cards */
 #programs {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Exactly 4 equal columns on desktop row */
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr); /* Fits 3 clean blocks per row on desktop */
+  gap: 25px;
   margin-top: 10px;
   width: 100%;
 }
 
 .program-card {
-  background: #f9f9f9;
-  border-radius: 8px;
-  padding: 25px 20px;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease, background-color 0.3s ease;
+  background: #fdfdfd;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  padding: 30px 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+  transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .program-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
-/* Icon and Heading Defaults */
-.program-card i {
-  font-size: 40px;
+/* Card Icons */
+.card-icon {
+  font-size: 42px;
   margin-bottom: 15px;
 }
 
 .program-card h3 {
-  margin-bottom: 15px;
-  font-size: 18px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
 }
 
-/* Distinct Color Accents */
-.program-card.education i { color: #ff9933; }
-.program-card.education h3 { color: #ff9933; }
-.program-card.education:hover { background-color: #fff4e6; }
-
-.program-card.health i { color: #e63946; }
-.program-card.health h3 { color: #e63946; }
-.program-card.health:hover { background-color: #ffe6e6; }
-
-.program-card.empowerment i { color: #1d4ed8; }
-.program-card.empowerment h3 { color: #1d4ed8; }
-.program-card.empowerment:hover { background-color: #e6f0ff; }
-
-.program-card.welfare i { color: #138808; }
-.program-card.welfare h3 { color: #138808; }
-.program-card.welfare:hover { background-color: #e6ffe6; }
-
+/* Styled Bullet Point Layout */
 .program-card ul {
-  list-style: none;
+  list-style-type: none; /* Clear default bullets */
   padding: 0;
   margin: 0;
+  text-align: left; /* Align text left inside card for readability */
+  width: 100%;
 }
 
 .program-card ul li {
-  margin: 10px 0;
+  margin-bottom: 12px;
   font-size: 14px;
-  color: #444;
+  color: #444444;
+  line-height: 1.5;
+  position: relative;
+  padding-left: 20px; /* Offset text to fit custom icon bullet */
 }
+
+/* Decorative matching custom dash bullet */
+.program-card ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 18px;
+}
+
+/* Color Accents (Icons, Headlines, Bullets, and Soft Hovers) */
+.program-card.cow-welfare .card-icon i, .program-card.cow-welfare h3, .program-card.cow-welfare ul li::before { color: #ff9933; }
+.program-card.cow-welfare:hover { background-color: #fffaf4; }
+
+.program-card.dairy-economy .card-icon i, .program-card.dairy-economy h3, .program-card.dairy-economy ul li::before { color: #b45309; } /* Deep Amber */
+.program-card.dairy-economy:hover { background-color: #fefaf0; }
+
+.program-card.education .card-icon i, .program-card.education h3, .program-card.education ul li::before { color: #f59e0b; } /* Orange-Yellow */
+.program-card.education:hover { background-color: #fffbeb; }
+
+.program-card.health .card-icon i, .program-card.health h3, .program-card.health ul li::before { color: #e63946; } /* Crimson Red */
+.program-card.health:hover { background-color: #fff5f5; }
+
+.program-card.empowerment .card-icon i, .program-card.empowerment h3, .program-card.empowerment ul li::before { color: #1d4ed8; } /* Corporate Blue */
+.program-card.empowerment:hover { background-color: #f0f5ff; }
+
+.program-card.welfare .card-icon i, .program-card.welfare h3, .program-card.welfare ul li::before { color: #138808; } /* Saffron Green */
+.program-card.welfare:hover { background-color: #f4fbf3; }
 
 /* Footer */
 footer {
@@ -191,18 +202,18 @@ footer {
   color: #fff;
   text-align: center;
   padding: 20px;
-  margin-top: 40px;
+  margin-top: 5px;
 }
 
-/* Responsive Breakpoints */
+/* Responsive Viewports */
 @media (max-width: 1024px) {
   #programs {
-    grid-template-columns: repeat(2, 1fr); /* Clean 2x2 grid layout on tablets */
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 680px) {
   #programs {
-    grid-template-columns: 1fr; /* Stacks perfectly in 1 vertical column on mobile screens */
+    grid-template-columns: 1fr; /* 1 vertical list on mobile screen sizes */
   }
 }
