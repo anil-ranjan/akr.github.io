@@ -221,10 +221,12 @@
     <p>© 2026 Narod Sashaktikaran Foundation | Website: www.narodfoundation.org</p>
   </footer>
 
-  <!-- SMART JAVASCRIPT ENGINE HANDLER TO TOGGLE THE CHOSEN TABS -->
+  <!-- DYNAMIC JAVASCRIPT CLICK SWITCHING CONTROLLER -->
   <script>
     function switchAboutTab(event, tabId) {
-      // Hide all content panels completely
+      // 1. Hide all about tab content panels completely
       var panels = document.getElementsByClassName('about-tab-panel');
       for (var i = 0; i < panels.length; i++) {
         panels[i].classList.remove('active');
+      }
+
