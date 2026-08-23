@@ -109,23 +109,39 @@ section h2 {
   padding: 20px;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
 .program-card:hover {
   transform: translateY(-5px);
 }
 
+/* Icon and Heading Defaults */
 .program-card i {
   font-size: 40px;
-  color: #138808; /* green */
   margin-bottom: 15px;
 }
 
 .program-card h3 {
-  color: #ff9933; /* saffron */
   margin-bottom: 10px;
 }
+
+/* Distinct Color Accents */
+.program-card.education i { color: #ff9933; }   /* saffron */
+.program-card.education h3 { color: #ff9933; }
+.program-card.education:hover { background-color: #fff4e6; }
+
+.program-card.health i { color: #e63946; }      /* red */
+.program-card.health h3 { color: #e63946; }
+.program-card.health:hover { background-color: #ffe6e6; }
+
+.program-card.empowerment i { color: #1d4ed8; } /* blue */
+.program-card.empowerment h3 { color: #1d4ed8; }
+.program-card.empowerment:hover { background-color: #e6f0ff; }
+
+.program-card.welfare i { color: #138808; }     /* green */
+.program-card.welfare h3 { color: #138808; }
+.program-card.welfare:hover { background-color: #e6ffe6; }
 
 .program-card ul {
   list-style: none;
