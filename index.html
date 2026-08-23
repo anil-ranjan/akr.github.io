@@ -4,123 +4,128 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Narod Sashaktikaran Foundation</title>
+  <!-- FontAwesome for the program card icons -->
+  <link rel="stylesheet" href="https://cloudflare.com">
   <link rel="stylesheet" href="style.css">
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- Header -->
-<header>
-  <div class="header-container">
-    <!-- Left side: Logo + Tagline -->
-    <div class="logo">
-      <img src="logo.png" alt="Narod Sashaktikaran Foundation Logo">
-      <p class="tagline"><em>Empowerment Brings Prosperity</em></p>
-    </div>
 
-    <!-- Centered block: Foundation name + CIN + Menu -->
-    <div class="logo-text">
-      <h1>Narod Sashaktikaran Foundation</h1>
-      <p class="registration">CIN: U85420DL2023NPL422184, Registration No. u/s 354: AAZCA6303LF20261,Registration No. u/s 332: AAZCA6303LE20261 </p>
-      <nav id="nav-menu">
-        <a href="#home">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#programs">Programs</a>
-        <a href="#contact">Contact</a>
-        <a href="#donate">Donate</a>
-      </nav>
+  <!-- Header Section with White Background -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <!-- Replace logo.png with your image file path -->
+        <img src="logo.png" alt="Narod Sashaktikaran Foundation Logo">
+        <p class="tagline">Empowerment Brings Prosperity</p>
+      </div>
+      <div class="logo-text">
+        <h1>Narod Sashaktikaran Foundation</h1>
+        <p class="registration">CIN: U85420DL2023NPL422184, Registration No. u/s 354: AAZCA6303LF20261, Registration No. u/s 332: AAZCA6303LE20261</p>
+        <nav>
+          <a href="#home">Home</a>
+          <a href="#about">About Us</a>
+          <a href="#programs-section">Programs</a>
+          <a href="#contact">Contact</a>
+          <a href="#donate">Donate</a>
+        </nav>
+      </div>
     </div>
+  </header>
+
+  <!-- Hero Section -->
+  <div class="hero" id="home">
+    <!-- Insert your hero headline or banner text here if needed -->
   </div>
-</header>
 
-
-  </section>
-
-  <!-- About Us -->
+  <!-- About Us Section -->
   <section id="about">
     <h2>About Us</h2>
-    <p><strong>Vision:</strong> To empower marginalized communities by providing access to education, healthcare, livelihood opportunities, and social inclusion.</p>
-    <p><strong>Leadership:</strong> Directed by Anil Ranjan and Ravi Sharma.</p>
-    <p><strong>Values:</strong> Transparency, inclusivity, sustainability, and empowerment.</p>
+    <div class="about-content">
+      <p><strong>Vision:</strong> To empower marginalized communities by providing access to education, healthcare, livelihood opportunities, and social inclusion.</p>
+      <p><strong>Leadership:</strong> Directed by Anil Ranjan and Ravi Sharma.</p>
+      <p><strong>Values:</strong> Transparency, inclusivity, sustainability, and empowerment.</p>
+    </div>
   </section>
 
-  <!-- Programs -->
-  <section id="programs">
+  <!-- Programs Section -->
+  <section id="programs-section">
+    <!-- HEADING IS IN ITS OWN UPPER ROW HERE -->
     <h2>Our Programs</h2>
+    
+    <!-- All 4 cards sit right below in a row -->
+    <div id="programs">
+      
+      <!-- Card 1: Education -->
+      <div class="program-card education">
+        <i class="fas fa-book-open"></i>
+        <h3>Education Initiatives</h3>
+        <ul>
+          <li>Literacy programs for children and adults</li>
+          <li>Skill development workshops</li>
+          <li>Scholarships and study material distribution</li>
+        </ul>
+      </div>
 
-    <div class="program-card education">
-      <i class="fas fa-book"></i>
-      <h3>Education Initiatives</h3>
-      <ul>
-        <li>Literacy programs for children and adults</li>
-        <li>Skill development workshops</li>
-        <li>Scholarships and study material distribution</li>
-      </ul>
-    </div>
+      <!-- Card 2: Health -->
+      <div class="program-card health">
+        <i class="fas fa-heartbeat"></i>
+        <h3>Health & Wellness</h3>
+        <ul>
+          <li>Free medical camps</li>
+          <li>Preventive healthcare campaigns</li>
+          <li>Mental health and counseling support</li>
+        </ul>
+      </div>
 
-    <div class="program-card health">
-      <i class="fas fa-heartbeat"></i>
-      <h3>Health & Wellness</h3>
-      <ul>
-        <li>Free medical camps</li>
-        <li>Preventive healthcare campaigns</li>
-        <li>Mental health and counseling support</li>
-      </ul>
-    </div>
+      <!-- Card 3: Community Empowerment -->
+      <div class="program-card empowerment">
+        <i class="fas fa-users"></i>
+        <h3>Community Empowerment</h3>
+        <ul>
+          <li>Women empowerment projects</li>
+          <li>Youth leadership programs</li>
+          <li>Rural development and livelihood support</li>
+        </ul>
+      </div>
 
-    <div class="program-card empowerment">
-      <i class="fas fa-users"></i>
-      <h3>Community Empowerment</h3>
-      <ul>
-        <li>Women empowerment projects</li>
-        <li>Youth leadership programs</li>
-        <li>Rural development and livelihood support</li>
-      </ul>
-    </div>
+      <!-- Card 4: Social Welfare -->
+      <div class="program-card welfare">
+        <i class="fas fa-leaf"></i>
+        <h3>Social Welfare & Inclusion</h3>
+        <ul>
+          <li>Support for marginalized communities</li>
+          <li>Disaster relief and rehabilitation</li>
+          <li>Environmental awareness initiatives</li>
+        </ul>
+      </div>
 
-    <div class="program-card welfare">
-      <i class="fas fa-leaf"></i>
-      <h3>Social Welfare & Inclusion</h3>
-      <ul>
-        <li>Support for marginalized communities</li>
-        <li>Disaster relief and rehabilitation</li>
-        <li>Environmental awareness initiatives</li>
-      </ul>
     </div>
   </section>
 
-  <!-- Contact -->
+  <!-- Contact Us Section -->
   <section id="contact">
     <h2>Contact Us</h2>
-    <p>Email: narodsashaktikaranfoundation@gmail.com</p>
-    <p>Phone: +91 9999656660</p>
-    <p>Address: Mahavir Enclave, Gali No. 04, New Delhi, Delhi NCR</p>
+    <div class="contact-content">
+      <p><strong>Email:</strong> narodsashaktikaranfoundation@gmail.com</p>
+      <p><strong>Phone:</strong> +91 9999656660</p>
+      <p><strong>Address:</strong> Mahavir Enclave, Gali No. 04, New Delhi, Delhi NCR</p>
+    </div>
   </section>
 
-  <!-- Donate -->
+  <!-- Donate Section -->
   <section id="donate">
     <h2>Support Our Mission</h2>
-    <p>Support our mission by donating — every contribution empowers communities.</p>
-    <!-- Placeholder until QR code is added -->
-    <div style="width:200px;height:200px;border:2px dashed #ccc;margin:auto;text-align:center;line-height:200px;">
-      QR Code Placeholder
+    <div class="donate-content" style="text-align: center;">
+      <p>Support our mission by donating — every contribution empowers communities.</p>
+      <div style="margin: 20px 0; font-weight: bold; color: #666;">[ QR Code Placeholder ]</div>
+      <p>All donations are eligible for tax exemption under Section 354.</p>
     </div>
-    <p>All donations are eligible for tax exemption under Section 354.</p>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2026 Narod Sashaktikaran Foundation</p>
-    <p>Website: www.narodfoundation.org</p>
+    <p>© 2026 Narod Sashaktikaran Foundation | Website: www.narodfoundation.org</p>
   </footer>
 
-  <!-- Script for Hamburger Menu -->
-  <script>
-    const toggle = document.getElementById('menu-toggle');
-    const navMenu = document.getElementById('nav-menu');
-    toggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-    });
-  </script>
 </body>
 </html>
