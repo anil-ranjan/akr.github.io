@@ -108,36 +108,51 @@ header {
   text-decoration: underline;
 }
 
-/* Hero Section */
+/* Hero Section - Fixed with High Contrast Visibility & Content Center alignment */
 .hero {
   background: linear-gradient(to right, #ff9933, #ffffff, #138808);
   text-align: center;
   padding: 60px 20px;
+  min-height: 220px;                 /* Guarantees the container stays long and visible */
+  display: flex !important;          /* Activates horizontal layout stacking context */
+  flex-direction: column !important; /* Arranges slogan items sequentially from top to bottom */
+  justify-content: center !important;/* Aligns the group directly in the vertical center */
+  align-items: center !important;    /* Centers text content horizontally on the canvas */
+  box-sizing: border-box !important;
 }
 
-/* Sections */
-section {
-  padding: 60px 20px;
-  max-width: 1400px;
-  margin: auto;
+/* Forceful Styling Rules for Slogan Elements Inside the Hero Section */
+.hero h2, 
+.hero h3, 
+.hero p {
+  color: #000000 !important;        /* Solid black color overrides for crisp contrast */
+  display: block !important;         /* Forces rendering visibility to the screen */
+  visibility: visible !important;    /* Defends text against hidden parents */
+  opacity: 1 !important;             /* Protects transparency properties */
+  text-shadow: none !important;      /* Removes any blurry color bleeds */
+  margin: 0 auto !important;
+  width: 100% !important;
+  max-width: 850px !important;       /* Wraps line text neatly inside desktop viewpoints */
 }
 
-section h2 {
-  color: #ff9933;
-  margin-bottom: 25px;
-  text-align: center;
-  font-size: 32px;
+.hero h2 {
+  font-size: 22px !important;        /* Clean, non-intrusive smaller font setup */
+  font-weight: bold !important;
+  margin-bottom: 12px !important;    /* Compact structural bottom gap spacing */
+  text-transform: none !important;
 }
 
-.about-content, .donate-content {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
+.hero h3 {
+  font-size: 19px !important;        /* Proportional mid-tier subheading font size */
+  font-weight: bold !important;
+  margin-bottom: 18px !important;
 }
 
-.about-content p {
-  margin-bottom: 15px;
-  font-size: 16px;
+.hero p {
+  font-size: 14px !important;        /* Legible, down-scaled italic description style */
+  font-style: italic !important;
+  font-weight: 600 !important;
+  line-height: 1.6 !important;
 }
 
 /* ========================================================
