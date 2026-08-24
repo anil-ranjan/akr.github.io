@@ -158,7 +158,14 @@ header {
 /* ========================================================
    ABOUT US SECTION - INTERACTIVE TAB BAR NAVIGATION
    ======================================================== */
+h2 {
+  text-align: center !important;
+  width: 100% !important;
+  margin-top: 50px !important;
+  margin-bottom: 25px !important;
+}
 .about-tabs-menu {
+  clear: both;
   display: flex;
   justify-content: center;
   gap: 15px;
