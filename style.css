@@ -161,9 +161,21 @@ header {
 h2 {
   text-align: center !important;
   width: 100% !important;
-  margin-top: 50px !important;
   margin-bottom: 25px !important;
+
+/* Restricts the heavy top margin strictly to the first section header */
+.hero + h2,
+#about h2 {
+  margin-top: 50px !important;
 }
+
+/* Safe clearance tracking fallback */
+.about-tabs-menu {
+  clear: both;
+  display: flex;
+  justify-content: center;
+}
+
 .about-tabs-menu {
   clear: both;
   display: flex;
