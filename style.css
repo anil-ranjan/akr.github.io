@@ -162,6 +162,7 @@ h2 {
   text-align: center !important;
   width: 100% !important;
   margin-bottom: 25px !important;
+}
 
 /* Restricts the heavy top margin strictly to the first section header */
 .hero + h2,
@@ -169,13 +170,7 @@ h2 {
   margin-top: 50px !important;
 }
 
-/* Safe clearance tracking fallback */
-.about-tabs-menu {
-  clear: both;
-  display: flex;
-  justify-content: center;
-}
-
+/* Safe clearance tracking fallback with correct tab styles */
 .about-tabs-menu {
   clear: both;
   display: flex;
