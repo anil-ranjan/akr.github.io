@@ -325,7 +325,7 @@
         <i class="fas fa-info-circle"></i> After making a transfer, please WhatsApp your receipt and PAN card details to
         <a href="https://wa.me/919205676639" target="_blank" class="wa">+91 9205676639</a>
         or email us at
-        <a href="/cdn-cgi/l/email-protection#9cf2fdeef3f8effdeff4fdf7e8f5f7fdeefdf2faf3e9f2f8fde8f5f3f2dcfbf1fdf5f0b2fff3f1" class="mail"><span class="__cf_email__" data-cfemail="ddb3bcafb2b9aebcaeb5bcb6a9b4b6bcafbcb3bbb2a8b3b9bca9b4b2b39dbab0bcb4b1f3beb2b0">[email&#160;protected]</span></a>
+        <a href="#" id="donorEmailLink" class="mail">narodsashaktikaranfoundation [at] gmail [dot] com</a>
         to claim your certificate.
       </p>
     </div>
@@ -338,7 +338,7 @@
       <div class="contact-card">
         <div class="contact-icon"><i class="fas fa-envelope"></i></div>
         <h3>Email</h3>
-        <p><a href="/cdn-cgi/l/email-protection#452b24372a213624362d242e312c2e2437242b232a302b2124312c2a2b052228242c296b262a28"><span class="__cf_email__" data-cfemail="e789869588839486948f868c938e8c86958689818892898386938e8889a7808a868e8bc984888a">[email&#160;protected]</span></a></p>
+        <p><a id="emailLink" href="#contact">narodsashaktikaranfoundation [at] gmail [dot] com</a></p>
       </div>
       <div class="contact-card">
         <div class="contact-icon"><i class="fas fa-phone"></i></div>
@@ -357,7 +357,20 @@
     &copy; 2026 Narod Sashaktikaran Foundation | Website: <a href="https://www.narodfoundation.org">www.narodfoundation.org</a>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
+    // Rebuild the email address in the browser so a host-side
+    // email-obfuscation shield has no raw mailto: to rewrite.
+    (function () {
+      var addr = "narodsashaktikaranfoundation" + "@" + "gmail" + "." + "com";
+      ["emailLink", "donorEmailLink"].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) {
+          el.textContent = addr;
+          el.setAttribute("href", "mailto:" + addr);
+        }
+      });
+    })();
+
     (function () {
       emailjs.init("-4vVOd6lhGoAgMRLe");
     })();
