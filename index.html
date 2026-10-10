@@ -235,10 +235,10 @@
             <input type="text" id="panNumber" placeholder="PAN Card No. (Optional)" pattern="[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}" title="Please enter a valid 10-digit Indian PAN format (e.g., ABCDE1234F)" style="width: 100% !important; padding: 10px 0 !important; font-size: 15px !important; color: #333333 !important; display: block !important; min-height: 38px !important; border: none !important; border-bottom: 2px solid #bbbbbb !important; outline: none !important; background: #ffffff !important; box-sizing: border-box !important;">
           </div>
           <div style="margin-bottom: 18px !important;">
-            <input type="email" id="emailId" placeholder="Email ID (Optional)" style="width: 100% !important; padding: 10px 0 !important; font-size: 15px !important; color: #333333 !important; display: block !important; min-height: 38px !important; border: none !important; border-bottom: 2px solid #bbbbbb !important; outline: none !important; background: #ffffff !important; box-sizing: border-box !important;">
+            <input type="email" id="emailId" placeholder="Email ID (Required)" required style="width: 100% !important; padding: 10px 0 !important; font-size: 15px !important; color: #333333 !important; display: block !important; min-height: 38px !important; border: none !important; border-bottom: 2px solid #bbbbbb !important; outline: none !important; background: #ffffff !important; box-sizing: border-box !important;">
           </div>
           <div style="margin-bottom: 18px !important;">
-            <input type="tel" id="mobileNumber" placeholder="Mobile Number (Optional)" pattern="[0-9]{10}" title="Enter a valid 10-digit phone number" style="width: 100% !important; padding: 10px 0 !important; font-size: 15px !important; color: #333333 !important; display: block !important; min-height: 38px !important; border: none !important; border-bottom: 2px solid #bbbbbb !important; outline: none !important; background: #ffffff !important; box-sizing: border-box !important;">
+            <input type="tel" id="mobileNumber" placeholder="Mobile Number (Required)" pattern="[0-9]{10}" title="Enter a valid 10-digit phone number" required style="width: 100% !important; padding: 10px 0 !important; font-size: 15px !important; color: #333333 !important; display: block !important; min-height: 38px !important; border: none !important; border-bottom: 2px solid #bbbbbb !important; outline: none !important; background: #ffffff !important; box-sizing: border-box !important;">
           </div>
           <div style="margin-bottom: 18px !important;">
             <input type="text" id="cityArea" placeholder="City/Area (Optional)" style="width: 100% !important; padding: 10px 0 !important; font-size: 15px !important; color: #333333 !important; display: block !important; min-height: 38px !important; border: none !important; border-bottom: 2px solid #bbbbbb !important; outline: none !important; background: #ffffff !important; box-sizing: border-box !important;">
@@ -254,15 +254,15 @@
         </form>
       </div>
 
-      <!-- Box 1: Scan UPI QR Code Card -->
-      <div style="flex: 1 1 280px !important; max-width: 420px !important; background: #ffffff !important; border: 2px dashed #ff9933 !important; padding: 30px !important; border-radius: 12px !important; box-shadow: 0 4px 12px rgba(0,0,0,0.04) !important; text-align: center !important; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; visibility: visible !important;">
+      <!-- Box 1: Scan UPI QR Code Card (hidden until donor form is submitted) -->
+      <div id="qrPayCard" style="display: none !important; flex: 1 1 280px !important; max-width: 420px !important; background: #ffffff !important; border: 2px dashed #ff9933 !important; padding: 30px !important; border-radius: 12px !important; box-shadow: 0 4px 12px rgba(0,0,0,0.04) !important; text-align: center !important; flex-direction: column !important; justify-content: center !important; align-items: center !important;">
         <!-- Live Payment QR Code Image -->
         <img src="Payment_QR.jpg" alt="Scan to Donate" style="width: 100% !important; max-width: 220px !important; height: auto !important; display: block !important; margin: 0 auto 15px auto !important; border-radius: 4px !important;">
         <p style="font-size: 13px !important; color: #777777 !important; font-style: italic !important; margin: 5px 0 0 0 !important; display: block !important;">Scan via any UPI App</p>
       </div>
 
-      <!-- Box 2: Direct Bank Transfer Details Card -->
-      <div style="flex: 1 1 280px !important; max-width: 450px !important; background: #ffffff !important; border-top: 5px solid #138808 !important; padding: 25px 30px !important; border-radius: 12px !important; box-shadow: 0 4px 12px rgba(0,0,0,0.04) !important; text-align: left !important; display: flex !important; flex-direction: column !important; justify-content: center !important; visibility: visible !important;">
+      <!-- Box 2: Direct Bank Transfer Details Card (hidden until donor form is submitted) -->
+      <div id="bankPayCard" style="display: none !important; flex: 1 1 280px !important; max-width: 450px !important; background: #ffffff !important; border-top: 5px solid #138808 !important; padding: 25px 30px !important; border-radius: 12px !important; box-shadow: 0 4px 12px rgba(0,0,0,0.04) !important; text-align: left !important; flex-direction: column !important; justify-content: center !important;">
         <h3 style="margin: 0 0 15px 0 !important; color: #138808 !important; font-size: 18px !important; font-weight: bold !important; border-bottom: 1px solid #eeeeee !important; padding-bottom: 8px !important; display: block !important;">
           <i class="fas fa-university" style="margin-right: 8px !important;"></i>Direct Bank Transfer
         </h3>
@@ -302,7 +302,7 @@
           <i class="fas fa-info-circle" style="color: #ff9933 !important; margin-right: 4px !important;"></i> After making a transfer, please WhatsApp your receipt and PAN card details to
           <a href="https://wa.me/919205676639" target="_blank" style="color: #138808 !important; font-weight: bold !important; text-decoration: none !important;">+91 9205676639</a>
           or email us at
-          <a href="mailto:narodsashaktikaranfoundation@gmail.com" style="color: #0066cc !important; font-weight: bold !important; text-decoration: none !important;">narodsashaktikaranfoundation@gmail.com</a>
+          <a href="/cdn-cgi/l/email-protection#4b252a39242f382a38232a203f22202a392a252d243e252f2a3f2224250b2c262a222765282426" style="color: #0066cc !important; font-weight: bold !important; text-decoration: none !important;"><span class="__cf_email__" data-cfemail="6907081b060d1a081a0108021d0002081b08070f061c070d081d000607290e04080005470a0604">[email&#160;protected]</span></a>
           to claim your certificate.
         </p>
       </div>
@@ -327,8 +327,8 @@
 
         <!-- Cleaned up, clickable email link -->
         <p>
-          <a href="mailto:narodsashaktikaranfoundation@gmail.com">
-            narodsashaktikaranfoundation@gmail.com
+          <a href="/cdn-cgi/l/email-protection#a7c9c6d5c8c3d4c6d4cfc6ccd3ceccc6d5c6c9c1c8d2c9c3c6d3cec8c9e7c0cac6cecb89c4c8ca">
+            <span class="__cf_email__" data-cfemail="acc2cddec3c8dfcddfc4cdc7d8c5c7cddecdc2cac3d9c2c8cdd8c5c3c2eccbc1cdc5c082cfc3c1">[email&#160;protected]</span>
         </a>
        </p>
       </div>
@@ -437,10 +437,17 @@
 
         emailjs.send('service_9v5b2nk', 'template_a4zy4np', templateParams)
           .then(function (response) {
+            // Reveal the payment cards only after a successful submission
+            var qrCard = document.getElementById('qrPayCard');
+            var bankCard = document.getElementById('bankPayCard');
+            if (qrCard) qrCard.style.setProperty('display', 'flex', 'important');
+            if (bankCard) bankCard.style.setProperty('display', 'flex', 'important');
+            if (qrCard) qrCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
             submitBtn.innerText = "Information Registered ✓";
             submitBtn.style.backgroundColor = "#138808";
             submitBtn.disabled = false;
-            alert("Thank you! Your information has been saved securely. Please complete your payment using the UPI QR or bank transfer shown on this page.");
+            alert("Thank you! Your information has been saved securely. Please complete your payment using the UPI QR or bank transfer now shown on this page.");
           }, function (error) {
             alert('Network verification timeout. Form data did not save securely. Please retry.');
             submitBtn.innerText = "Proceed to Pay";
