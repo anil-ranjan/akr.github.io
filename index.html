@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="style.css">
   <!-- EmailJS SDK (sends the donor form to the NGO inbox) -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <!-- QRCode.js library (draws the dynamic UPI QR code with the donor's amount) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
 
@@ -256,9 +258,13 @@
 
       <!-- Box 1: Scan UPI QR Code Card (hidden until donor form is submitted) -->
       <div id="qrPayCard" style="display: none !important; flex: 1 1 280px !important; max-width: 420px !important; background: #ffffff !important; border: 2px dashed #ff9933 !important; padding: 30px !important; border-radius: 12px !important; box-shadow: 0 4px 12px rgba(0,0,0,0.04) !important; text-align: center !important; flex-direction: column !important; justify-content: center !important; align-items: center !important;">
-        <!-- Live Payment QR Code Image -->
-        <img src="Payment_QR.jpg" alt="Scan to Donate" style="width: 100% !important; max-width: 220px !important; height: auto !important; display: block !important; margin: 0 auto 15px auto !important; border-radius: 4px !important;">
-        <p style="font-size: 13px !important; color: #777777 !important; font-style: italic !important; margin: 5px 0 0 0 !important; display: block !important;">Scan via any UPI App</p>
+        <!-- Dynamic amount-locked QR code (JavaScript draws it inside this canvas) -->
+        <p style="font-size: 15px !important; color: #333333 !important; font-weight: bold !important; margin: 0 0 10px 0 !important; display: block !important;">Complete Payment of ₹<span id="displayAmount">0</span></p>
+        <div id="dynamicQrCanvas" style="display: flex !important; justify-content: center !important; margin: 5px auto 15px auto !important;"></div>
+        <p style="font-size: 13px !important; color: #777777 !important; font-style: italic !important; margin: 5px 0 4px 0 !important; display: block !important;">Scan via any UPI App</p>
+        <p style="font-size: 11px !important; color: #999999 !important; margin: 0 0 14px 0 !important; display: block !important;">UPI ID: 3414686860592395@cnrb</p>
+        <!-- On a smartphone this opens GPay/PhonePe/Paytm with the amount pre-filled -->
+        <a id="mobileUpiLink" href="#" style="display: block !important; padding: 12px 14px !important; background-color: #00bfff !important; color: white !important; text-decoration: none !important; border-radius: 8px !important; font-size: 14px !important; font-weight: bold !important; width: 100% !important; max-width: 260px !important; box-sizing: border-box !important; text-align: center !important;">Open Mobile UPI App</a>
       </div>
 
       <!-- Box 2: Direct Bank Transfer Details Card (hidden until donor form is submitted) -->
@@ -302,7 +308,7 @@
           <i class="fas fa-info-circle" style="color: #ff9933 !important; margin-right: 4px !important;"></i> After making a transfer, please WhatsApp your receipt and PAN card details to
           <a href="https://wa.me/919205676639" target="_blank" style="color: #138808 !important; font-weight: bold !important; text-decoration: none !important;">+91 9205676639</a>
           or email us at
-          <a href="mailto:narodsashaktikaranfoundation@gmail.com" style="color: #0066cc !important; font-weight: bold !important; text-decoration: none !important;">narodsashaktikaranfoundation@gmail.com</a>
+          <a href="/cdn-cgi/l/email-protection#127c73607d766173617a7379667b797360737c747d677c7673667b7d7c52757f737b7e3c717d7f" style="color: #0066cc !important; font-weight: bold !important; text-decoration: none !important;"><span class="__cf_email__" data-cfemail="acc2cddec3c8dfcddfc4cdc7d8c5c7cddecdc2cac3d9c2c8cdd8c5c3c2eccbc1cdc5c082cfc3c1">[email&#160;protected]</span></a>
           to claim your certificate.
         </p>
       </div>
@@ -327,8 +333,8 @@
 
         <!-- Cleaned up, clickable email link -->
         <p>
-          <a href="mailto:narodsashaktikaranfoundation@gmail.com">
-            narodsashaktikaranfoundation@gmail.com
+          <a href="/cdn-cgi/l/email-protection#3b555a49545f485a48535a504f52505a495a555d544e555f5a4f5254557b5c565a525715585456">
+            <span class="__cf_email__" data-cfemail="fd939c8f92998e9c8e959c968994969c8f9c939b928893999c89949293bd9a909c9491d39e9290">[email&#160;protected]</span>
         </a>
        </p>
       </div>
@@ -362,7 +368,7 @@
   </footer>
 
   <!-- DYNAMIC JAVASCRIPT CLICK SWITCHING CONTROLLER -->
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     function switchAboutTab(targetPanelId) {
       // 1. Hide all about tab content panels completely
       var panels = document.querySelectorAll('.about-tab-panel');
@@ -443,6 +449,24 @@
             var bankCard = document.getElementById('bankPayCard');
             if (qrCard) qrCard.style.setProperty('display', 'flex', 'important');
             if (bankCard) bankCard.style.setProperty('display', 'flex', 'important');
+
+            // Build the UPI link carrying the donor's amount
+            var upiUrl = "upi://pay?pa=3414686860592395@cnrb&pn=Narod%20Sashaktikaran%20Foundation&am=" + enteredAmount + "&cu=INR";
+            document.getElementById('displayAmount').innerText = enteredAmount;
+            document.getElementById('mobileUpiLink').href = upiUrl;
+
+            // Draw a fresh dynamic QR code containing the amount-locked UPI link
+            var qrCanvasContainer = document.getElementById('dynamicQrCanvas');
+            qrCanvasContainer.innerHTML = "";
+            new QRCode(qrCanvasContainer, {
+              text: upiUrl,
+              width: 200,
+              height: 200,
+              colorDark: "#000000",
+              colorLight: "#ffffff",
+              correctLevel: QRCode.CorrectLevel.H
+            });
+
             if (qrCard) qrCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
             submitBtn.innerText = "Information Registered ✓";
