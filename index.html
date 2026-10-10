@@ -168,13 +168,13 @@
         <ul>
           <li>Women empowerment projects (social awareness groups promoting couple relationship harmony and family well-being)</li>
           <li>Youth leadership and career guidance programs</li>
-          <li>Rural development and livelihood support</li>
+           <li>Rural development and livelihood support</li>
         </ul>
       </div>
 
       <!-- Card 4: Social Welfare & Inclusion -->
-      <div class="program-card welfare">
-        <div class="card-icon"><i class="fas fa-leaf"></i></div>
+      <div class="program-card social-welfare">
+        <div class="card-icon"><i class="fas fa-hand-holding-heart"></i></div>
         <h3>Social Welfare & Inclusion</h3>
         <ul>
           <li>Support for marginalized communities</li>
@@ -184,8 +184,8 @@
       </div>
 
       <!-- Card 5: Cow Protection & Welfare -->
-      <div class="program-card cow-welfare">
-        <div class="card-icon"><i class="fas fa-cow"></i></div>
+      <div class="program-card animal-welfare">
+        <div class="card-icon"><i class="fas fa-paw"></i></div>
         <h3>Cow Protection & Welfare</h3>
         <ul>
           <li>Protecting and rescuing cow-progeny from sickness and starvation</li>
@@ -194,9 +194,9 @@
         </ul>
       </div>
 
-      <!-- Card 6: Cow-Based Economy & Dairy Development -->
+      <!-- Card 6: Cow-Based Economy & Dairy -->
       <div class="program-card dairy-economy">
-        <div class="card-icon"><i class="fas fa-hand-holding-hand"></i></div>
+        <div class="card-icon"><i class="fas fa-seedling"></i></div>
         <h3>Cow-Based Economy & Dairy</h3>
         <ul>
           <li>Procuring and processing fresh local A2 milk directly from rural farmers</li>
@@ -208,57 +208,45 @@
     </div>
   </section>
 
-       <!-- ========================================================
-       UNIFIED DONATION SECTION - DYNAMIC PROGRESSIVE UNLOCK
+  <!-- ========================================================
+       UNIFIED DONATION SECTION - CLEAN & FIXED FUNCTIONAL
        ======================================================== -->
   <section id="donate" style="display: block !important; visibility: visible !important; opacity: 1 !important; padding: 60px 20px !important; background-color: #fafafa !important; font-family: Arial, sans-serif !important;">
     
     <h2 style="text-align: center !important; color: #333333 !important; font-size: 28px !important; font-weight: bold !important; margin: 0 0 10px 0 !important; display: block !important;">Support Our Mission</h2>
     <p style="text-align: center !important; font-size: 16px !important; color: #555555 !important; margin: 0 auto 35px auto !important; max-width: 700px !important; display: block !important;">Support our mission by donating — every contribution empowers communities.</p>
     
-    <!-- Outer Horizontal Container Framework Layout Alignment -->
     <div style="display: flex !important; flex-direction: row !important; flex-wrap: wrap !important; justify-content: center !important; align-items: flex-start !important; gap: 40px !important; max-width: 1050px !important; margin: 0 auto !important; width: 100% !important;">
       
-      <!-- LEFT SIDE: Form Input Card Asset (Always Visible) -->
+      <!-- LEFT SIDE: Full Form Inputs Card -->
       <div style="flex: 1 1 320px !important; max-width: 460px !important; background: #ffffff !important; padding: 30px !important; border-radius: 12px !important; box-shadow: 0 4px 20px rgba(0,0,0,0.06) !important; box-sizing: border-box !important;">
         <h3 style="margin-top: 0 !important; margin-bottom: 25px !important; color: #333333 !important; font-size: 18px !important; font-weight: bold !important; text-align: left !important; border-bottom: 1px solid #eeeeee !important; padding-bottom: 8px !important;">Donor Information Details</h3>
         
-        <form id="donationForm" style="text-align: left !important;">
-          <!-- Name Group -->
+        <form id="donationForm" style="text-align: left !important; display: block !important;">
           <div style="margin-bottom: 22px !important;">
             <input type="text" id="donorName" placeholder="Full Name (Required)" required style="width: 100% !important; padding: 10px 0 !important; font-size: 15px !important; border: none !important; border-bottom: 1px solid #e0e0e0 !important; outline: none !important; background: transparent !important; box-sizing: border-box !important;">
           </div>
           
-          <!-- PAN Group -->
           <div style="margin-bottom: 22px !important;">
-            <input type="text" id="panNumber" placeholder="PAN Card No. (Optional)" 
-                   pattern="[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}" 
-                   title="Please enter a valid 10-digit Indian PAN format (e.g., ABCDE1234F)" 
-                   style="width: 100% !important; padding: 10px 0 !important; font-size: 15px !important; border: none !important; border-bottom: 1px solid #e0e0e0 !important; outline: none !important; background: transparent !important; box-sizing: border-box !important;">
-
+            <input type="text" id="panNumber" placeholder="PAN Card No. (Optional)" pattern="[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}" title="Please enter a valid 10-digit Indian PAN format (e.g., ABCDE1234F)" style="width: 100% !important; padding: 10px 0 !important; font-size: 15px !important; border: none !important; border-bottom: 1px solid #e0e0e0 !important; outline: none !important; background: transparent !important; box-sizing: border-box !important;">
           </div>
           
-          <!-- Email Group -->
           <div style="margin-bottom: 22px !important;">
             <input type="email" id="emailId" placeholder="Email ID (Optional)" style="width: 100% !important; padding: 10px 0 !important; font-size: 15px !important; border: none !important; border-bottom: 1px solid #e0e0e0 !important; outline: none !important; background: transparent !important; box-sizing: border-box !important;">
           </div>
           
-          <!-- Mobile Group -->
           <div style="margin-bottom: 22px !important;">
             <input type="tel" id="mobileNumber" placeholder="Mobile Number (Optional)" pattern="[0-9]{10}" title="Enter a valid 10-digit phone number" style="width: 100% !important; padding: 10px 0 !important; font-size: 15px !important; border: none !important; border-bottom: 1px solid #e0e0e0 !important; outline: none !important; background: transparent !important; box-sizing: border-box !important;">
           </div>
 
-          <!-- City Group -->
           <div style="margin-bottom: 22px !important;">
             <input type="text" id="cityArea" placeholder="City/Area (Optional)" style="width: 100% !important; padding: 10px 0 !important; font-size: 15px !important; border: none !important; border-bottom: 1px solid #e0e0e0 !important; outline: none !important; background: transparent !important; box-sizing: border-box !important;">
           </div>
           
-          <!-- Amount Group -->
           <div style="margin-bottom: 25px !important;">
             <input type="number" id="amount" placeholder="Donation Amount (₹) (Required)" min="1" required style="width: 100% !important; padding: 10px 0 !important; font-size: 15px !important; border: none !important; border-bottom: 1px solid #e0e0e0 !important; outline: none !important; background: transparent !important; box-sizing: border-box !important;">
           </div>
 
-          <!-- Checkbox Toggles -->
           <div style="display: flex !important; align-items: center !important; margin-bottom: 25px !important;">
             <input type="checkbox" id="taxCertificate" style="width: 16px !important; height: 16px !important; margin-right: 10px !important; cursor: pointer !important;">
             <label for="taxCertificate" style="font-size: 13px !important; color: #b37400 !important; font-weight: bold !important; cursor: pointer !important; user-select: none !important;">Request 80G Tax Certificate (50% Deduction)</label>
@@ -268,12 +256,11 @@
         </form>
       </div>
 
-      <!-- RIGHT SIDE: Hidden Dynamic Payment Columns (Revealed after Form Submission) -->
-      <div id="paymentAreaHidden" style="display: none !important; flex: 1 1 320px !important; max-width: 550px !important; box-sizing: border-box !important;">
+      <!-- RIGHT SIDE: Payment QR and Bank Card -->
+      <div id="paymentAreaHidden" style="display: block !important; flex: 1 1 320px !important; max-width: 550px !important; box-sizing: border-box !important;">
         <h3 style="margin-top: 0 !important; margin-bottom: 25px !important; color: #222222 !important; font-size: 18px !important; font-weight: bold !important; text-align: center !important;"> Complete Payment of ₹<span id="displayAmount">0</span></h3>
         
         <div style="display: flex !important; flex-direction: row !important; flex-wrap: wrap !important; gap: 20px !important; justify-content: center !important; width: 100% !important;">
-          <!-- QR Card Container -->
           <div style="flex: 1 1 230px !important; max-width: 260px !important; background: #ffffff !important; border: 2px dashed #ff9933 !important; padding: 20px !important; border-radius: 12px !important; box-shadow: 0 4px 12px rgba(0,0,0,0.04) !important; text-align: center !important; box-sizing: border-box !important;">
             <img src="Payment_QR.jpg" alt="Scan to Donate" style="width: 100% !important; height: auto !important; display: block !important; margin: 0 auto 12px auto !important; border-radius: 4px !important;">
             <p style="font-size: 12px !important; color: #555555 !important; font-weight: bold !important; margin: 0 0 4px 0 !important;">Scan via any UPI App</p>
@@ -281,189 +268,83 @@
             <a id="mobileUpiLink" href="#" style="display: inline-block !important; padding: 10px 12px !important; background: #00bfff !important; color: white !important; text-decoration: none !important; border-radius: 6px !important; font-size: 12px !important; font-weight: bold !important; width: 100% !important; box-sizing: border-box !important;">Open Mobile UPI App</a>
           </div>
 
-          <!-- Bank Card Container -->
           <div style="flex: 1 1 230px !important; max-width: 260px !important; background: #ffffff !important; border-top: 5px solid #138808 !important; padding: 20px !important; border-radius: 12px !important; box-shadow: 0 4px 12px rgba(0,0,0,0.04) !important; text-align: left !important; box-sizing: border-box !important;">
             <h4 style="margin: 0 0 12px 0 !important; color: #138808 !important; font-size: 15px !important; font-weight: bold !important; border-bottom: 1px solid #eeeeee !important; padding-bottom: 6px !important;">Direct Bank Transfer</h4>
-            
-            <div style="margin-bottom: 10px !important;">
-              <strong style="color: #666666 !important; font-size: 10px !important; display: block !important; text-transform: uppercase !important;">Account Name</strong>
-              <span style="font-weight: bold !important; font-size: 12px !important; color: #222222 !important;">Narod Sashaktikaran Foundation</span>
-            </div>
-            
-            <div style="margin-bottom: 10px !important;">
-              <strong style="color: #666666 !important; font-size: 10px !important; display: block !important; text-transform: uppercase !important;">Bank Name</strong>
-              <span style="font-weight: 600 !important; font-size: 12px !important; color: #222222 !important;">Canara Bank</span>
-            </div>
-            
-            <div style="margin-bottom: 10px !important;">
-              <strong style="color: #666666 !important; font-size: 10px !important; display: block !important; text-transform: uppercase !important;">Account Number</strong>
-              <span style="font-family: monospace !important; font-size: 13px !important; font-weight: bold !important; background: #f4f4f4 !important; padding: 2px 6px !important; border-radius: 4px !important; display: inline-block !important; color: #000000 !important;">120041592395</span>
-            </div>
-            
-            <div style="margin-bottom: 0 !important;">
+
+Account NameNarod Sashaktikaran Foundation
+Bank NameCanara Bank
+Account Number120041592395
+IFSC CodeCNRB0005869
+
+80G Registration Status Notice: All contributions to Narod Sashaktikaran Foundation are eligible for a 50% tax deduction under Section 80G (Approval No: AAZCA6303LF20261).
 
 
-  <!-- Contact Us Section (Restructured with Grid Elements) -->
-  <section id="contact">
-    <h2 class="section-title">Contact Us</h2>
-    <div class="contact-grid">
-      
-      <!-- Card 1: Email Box -->
-      <div class="contact-card">
-        <!-- Font Awesome Icon (Make sure Font Awesome CDN is linked in your <head>) -->
-        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-  
-        <!-- Safe Unicode Email Symbol (&#9993;) used here as a backup for the header text -->
-        <h3>&#9993; Email</h3>
-  
-        <!-- Cleaned up, clickable email link -->
-        <p>
-          <a href="mailto:narodsashaktikaranfoundation@gmail.com">
-            narodsashaktikaranfoundation@gmail.com
-        </a>
-       </p>
-      </div>
+Contact Us
 
-      <!-- Card 2: Phone Box -->
-      <div class="contact-card">
-        <!-- Uses a universal text symbol inside the icon circle -->
-        <div class="contact-icon" style="font-size: 24px; line-height: 60px; text-align: center;">
-          &#9743;
-      </div>
-      <h3>Phone</h3>
-      <p>
-        <a href="tel:+919205676639">+91 9205676639</a>
-      </p>
-      </div>
+Email
+narodsashaktikaranfoundation@gmail.com
 
+Phone
++91 9205676639
 
-      <!-- Card 3: Address Box -->
-      <div class="contact-card">
-        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-        <h3>Address</h3>
-        <p>F-12A, Mahavir Enclave, Gali No. 04,<br>New Delhi, Pin: 110045</p>
-      </div>
-
-    </div>
-  </section>
-    <!-- Footer Section -->
-  <footer>
-    <p>© 2026 Narod Sashaktikaran Foundation | Website: www.narodfoundation.org</p>
-  </footer>
-
-  <!-- DYNAMIC JAVASCRIPT CLICK SWITCHING CONTROLLER -->
-  <script>
-    function switchAboutTab(targetPanelId) {
-      // 1. Hide all about tab content panels completely
-      var panels = document.querySelectorAll('.about-tab-panel');
-      for (var i = 0; i < panels.length; i++) {
-        panels[i].classList.remove('active');
-      }
-
-      // 2. Remove the orange active highlight from all tab buttons
-      var buttons = document.querySelectorAll('.tab-btn');
-      for (var i = 0; i < buttons.length; i++) {
-        buttons[i].classList.remove('active');
-      }
-
-      // 3. Show the clicked panel and highlight the correct button manually
-      document.getElementById(targetPanelId).classList.add('active');
-      
-      if (targetPanelId === 'vision-tab') {
-        document.getElementById('btn-vision').classList.add('active');
-      } else {
-        document.getElementById('btn-leadership').classList.add('active');
-      }
-    }
-  </script>
-
-</body>
- <!-- ========================================================
-       AUTOMATED VALIDATION & DISPATCH ENGINE
-       ======================================================== -->
-  <script type="text/javascript" src="https://jsdelivr.net"></script>
-  
-  <script type="text/javascript">
-     // Initialize your EmailJS public connection credentials
-     (function(){
-        emailjs.init("-4vVOd6lhGoAgMRLe"); // <-- Replace with your real EmailJS Public Key string
-     })();
-
-     const checkbox = document.getElementById('taxCertificate');
-     const panInput = document.getElementById('panNumber');
-     const emailInput = document.getElementById('emailId');
-     const form = document.getElementById('donationForm');
-     const paymentArea = document.getElementById('paymentAreaHidden');
-
-     // Dynamically manage field requirements based on checkbox status
-     checkbox.addEventListener('change', function() {
-         if (this.checked) {
-             panInput.required = true;
-             emailInput.required = true;
-             panInput.placeholder = "PAN Card No. (Required)";
-             emailInput.placeholder = "Email ID (Required)";
-         } else {
-             panInput.required = false;
-             emailInput.required = false;
-             panInput.placeholder = "PAN Card No. (Optional)";
-             emailInput.placeholder = "Email ID (Optional)";
-         }
-     });
-
-     // Reveal hidden details once validation rules pass successfully
-     function revealPaymentSystem(enteredAmount) {
-         document.getElementById('displayAmount').innerText = enteredAmount;
-         
-         // Generate mobile friendly layout deep link
-         const upiUrl = `upi://pay?pa=3414686860592395@cnrb&pn=Narod%20Sashaktikaran%20Foundation&am=${enteredAmount}&cu=INR`;
-         document.getElementById('mobileUpiLink').href = upiUrl;
-
-         // Dynamic container box display unlock mechanism
-         paymentArea.setAttribute("style", "display: block !important; flex: 1 1 320px !important; max-width: 550px !important; box-sizing: border-box !important; animation: fadeIn 0.5s ease-in;");
-         paymentArea.scrollIntoView({ behavior: 'smooth' });
-
-         const submitBtn = document.getElementById('submitBtn');
-         submitBtn.innerText = "Information Registered ✓";
-         submitBtn.style.backgroundColor = "#138808";
-     }
-
-     // Handle final form submissions
-     form.addEventListener('submit', function(e) {
-         e.preventDefault();
-
-         const submitBtn = document.getElementById('submitBtn');
-         const enteredAmount = document.getElementById('amount').value;
-         
-         submitBtn.innerText = "Securing Submission Info...";
-         submitBtn.disabled = true;
-
-         // Form email message text status routing
-         const is80GRequested = checkbox.checked ? "YES - ACTION REQUIRED" : "NO - Tracking Record Only";
-         const panValue = checkbox.checked ? panInput.value.toUpperCase() : (panInput.value || "Not Requested/Provided");
-         const emailValue = emailInput.value || "Not Provided";
-
-         const templateParams = {
-             request_80g_status: is80GRequested,
-             donor_name: document.getElementById('donorName').value,
-             donor_pan: panValue,
-             donor_email: emailValue,
-             donor_mobile: document.getElementById('mobileNumber').value || "Not Provided",
-             donor_city: document.getElementById('cityArea').value || "Not Provided",
-             amount: enteredAmount
-         };
-
-         // Fire automated internal email payload to the dual NGO inbox lines in ALL test cases
-         emailjs.send('service_9v5b2nk', 'template_a4zy4np', templateParams) // <-- Replace with your real IDs
-             .then(function(response) {
-                 revealPaymentSystem(enteredAmount);
-             }, function(error) {
-                 alert('Network verification timeout. Form data did not save securely. Please retry.');
-                 submitBtn.innerText = "Proceed to Pay";
-                 submitBtn.disabled = false;
-             });
-     });
-  </script>
-
-</html>
-
-
+Address
+F-12A, Mahavir Enclave, Gali No. 04,
+New Delhi, Pin: 110045
+© 2026 Narod Sashaktikaran Foundation | Website: www.narodfoundation.org
+(function(){
+emailjs.init("-4vVOd6lhGoAgMRLe");
+})();
+const checkbox = document.getElementById('taxCertificate');
+const panInput = document.getElementById('panNumber');
+const emailInput = document.getElementById('emailId');
+const form = document.getElementById('donationForm');
+if(checkbox) {
+checkbox.addEventListener('change', function() {
+if (this.checked) {
+panInput.required = true;
+emailInput.required = true;
+panInput.placeholder = "PAN Card No. (Required)";
+emailInput.placeholder = "Email ID (Required)";
+} else {
+panInput.required = false;
+emailInput.required = false;
+panInput.placeholder = "PAN Card No. (Optional)";
+emailInput.placeholder = "Email ID (Optional)";
+}
+});
+}
+if(form) {
+form.addEventListener('submit', function(e) {
+e.preventDefault();
+const submitBtn = document.getElementById('submitBtn');
+const enteredAmount = document.getElementById('amount').value;
+submitBtn.innerText = "Securing Submission Info...";
+submitBtn.disabled = true;
+const is80GRequested = checkbox.checked ? "YES - ACTION REQUIRED" : "NO - Tracking Record Only";
+const panValue = checkbox.checked ? panInput.value.toUpperCase() : (panInput.value || "Not Requested/Provided");
+const emailValue = emailInput.value || "Not Provided";
+const templateParams = {
+request_80g_status: is80GRequested,
+donor_name: document.getElementById('donorName').value,
+donor_pan: panValue,
+donor_email: emailValue,
+donor_mobile: document.getElementById('mobileNumber').value || "Not Provided",
+donor_city: document.getElementById('cityArea').value || "Not Provided",
+amount: enteredAmount
+};
+emailjs.send('service_9v5b2nk', 'template_a4zy4np', templateParams)
+.then(function(response) {
+document.getElementById('displayAmount').innerText = enteredAmount;
+const upiUrl = upi://pay?pa=3414686860592395@cnrb&pn=Narod%20Sashaktikaran%20Foundation&am=${enteredAmount}&cu=INR;
+document.getElementById('mobileUpiLink').href = upiUrl;
+submitBtn.innerText = "Information Registered ✓";
+submitBtn.style.backgroundColor = "#138808";
+submitBtn.disabled = false;
+alert("Thank you! Your information has been saved securely. Please complete your payment using the options on the right.");
+}, function(error) {
+alert('Network verification timeout. Form data did not save securely. Please retry.');
+submitBtn.innerText = "Proceed to Pay";
+submitBtn.disabled = false;
+});
+});
+}
